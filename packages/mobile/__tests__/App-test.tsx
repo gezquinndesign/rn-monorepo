@@ -1,13 +1,14 @@
-import React from 'react'
-import '@testing-library/jest-native/extend-expect'
-import { render, waitFor } from '@testing-library/react-native'
+/**
+ * @format
+ */
 
-import { App } from 'components/src/App'
+import 'react-native';
+import React from 'react';
+import App from '../App';
 
-test('Renders the shared app', async () => {
-  const { getByText } = render(<App />)
-  const theText = 'Code sharing using Monorepo'
+// Note: test renderer must be required after react-native.
+import renderer from 'react-test-renderer';
 
-  await waitFor(() => getByText(theText))
-  expect(getByText(theText)).toHaveTextContent(theText)
-})
+it('renders correctly', () => {
+  renderer.create(<App />);
+});

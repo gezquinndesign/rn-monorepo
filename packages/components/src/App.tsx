@@ -8,7 +8,9 @@ import {
   View,
 } from 'react-native'
 
-import { AppHeader } from './AppHeader'
+// @ts-ignore
+import Button from './button/button'
+import { AppHeader } from './AppHeader/AppHeader'
 
 export function App() {
   return (
@@ -35,8 +37,8 @@ export function App() {
                 <Text style={styles.highlight}>
                   packages/components/App.tsx
                 </Text>{' '}
-                to change this screen and then come back to see your edits (in
-                the phone or the browser).
+                to change this fucking screen and then come back to see your
+                edits (in the phone or the browser).
               </Text>
             </View>
             <View style={styles.sectionContainer}>
@@ -56,6 +58,9 @@ export function App() {
                 <Text style={styles.highlight}>.ios</Text>,{' '}
                 <Text style={styles.highlight}>.native</Text>, etc).
               </Text>
+              <View style={styles.sectionDescription}>
+                <Button color="red" text="Gezza's button" onClick={() => {}} />
+              </View>
             </View>
           </View>
         </ScrollView>
@@ -67,6 +72,7 @@ export function App() {
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'white',
+    height: '100%',
   },
   engine: {
     position: 'absolute',

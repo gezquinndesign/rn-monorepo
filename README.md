@@ -15,8 +15,7 @@ Prettier and ESLint are also configured as pre-commit hooks.
 - `$ cd react-native-web-monorepo`
 - `$ yarn`
 - Web
-  - [CRA] `$ yarn workspace web-cra start`
-  - [Next.js] `$ yarn workspace web-nextjs dev`
+  - [CRA] `$ yarn workspace web start`
 - Mobile
   - [iOS]
     - `$ cd packages/mobile/ios && pod update && pod install && cd -`

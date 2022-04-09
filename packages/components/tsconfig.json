@@ -6,6 +6,6 @@
     "noEmit": true,
     "target": "ESNext"
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "src/button/button.tsx", "src/button/button.web.tsx"],
   "exclude": ["node_modules"]
 }

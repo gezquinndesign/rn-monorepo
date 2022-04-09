@@ -5,6 +5,9 @@
   "scripts": {
     "test": "jest --passWithNoTests"
   },
+  "dependencies": {
+    "@gezquinndesign/uilibrary": "file:gezquinndesign-uilibrary-0.0.3.tgz"
+  },
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-native": "*",
