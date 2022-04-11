@@ -8,8 +8,7 @@ import {
   View,
 } from 'react-native'
 
-// @ts-ignore
-import Button from './button/button'
+import { Button } from 'rn-uilibrary'
 import { AppHeader } from './AppHeader/AppHeader'
 
 export function App() {
