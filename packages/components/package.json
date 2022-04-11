@@ -6,12 +6,17 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@gezquinndesign/uilibrary": "file:gezquinndesign-uilibrary-0.0.3.tgz"
+    "rn-uilibrary": "^0.0.2",
+    "styled-components": "^5.3.5"
   },
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-native": "*",
     "react": "*",
     "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.25",
+    "@types/styled-components-react-native": "^5.1.3"
   }
 }
