@@ -1,0 +1,13 @@
+*.min.*
+*lock.*
+.history
+.next
+.vscode
+build
+dist
+node_modules
+mobile/android
+mobile/ios
+storybook-static
+build
+dist
