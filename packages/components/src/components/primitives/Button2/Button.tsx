@@ -11,14 +11,16 @@ export default function ButtonNativeComponent({
   onClick,
   color,
   textColor,
+  ...restProps
 }: ButtonPropsInterface) {
   return (
     <Button
-        style={[styles.button, !!color && { backgroundColor: color }]}
-        onPress={onClick}
-        activeOpacity={0.8}
-
-      >NATIVE {text}
-      </Button>
+      {...restProps}
+      style={[styles.button, !!color && { backgroundColor: color }]}
+      onPress={onClick}
+      activeOpacity={0.8}
+    >
+      NATIVE {text}
+    </Button>
   )
 }

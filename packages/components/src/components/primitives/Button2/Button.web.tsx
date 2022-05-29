@@ -3,24 +3,22 @@ import { ButtonPropsInterface } from './props.interface'
 import { Button } from 'native-base'
 import { Style } from './style'
 
-export default function ButtonWebComponent(props: ButtonPropsInterface) {
+export default function ButtonWebComponent({
+  text,
+  onClick,
+  color,
+  textColor,
+  ...restProps
+}: ButtonPropsInterface) {
   return (
-    // <button
-    //   style={
-    //     { ...Style.button, ...Style.buttonText } as unknown as CSSProperties
-    //   }
-    //   onClick={props.onClick}
-    // >
-    //   WEB {props.text}
-    // </button>
-        <Button
-      style={
-        { ...Style.button } as unknown as CSSProperties
-      }
-      _text={Style.buttonText }
-        onPress={props.onClick}
-        activeOpacity={0.8}
-      >WEB {props.text}
-      </Button>
+    <Button
+      {...restProps}
+      style={{ ...Style.button } as unknown as CSSProperties}
+      _text={Style.buttonText}
+      onPress={onClick}
+      activeOpacity={0.8}
+    >
+      WEB {text}
+    </Button>
   )
 }
