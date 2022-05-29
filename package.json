@@ -10,8 +10,7 @@
   "scripts": {
     "start:web": "yarn workspace web start:web",
     "start:android": "yarn workspace mobile android",
-    "android": "yarn workspace mobile android",
-    "ios": "yarn workspace mobile ios",
+    "start:ios": "yarn workspace mobile ios",
     "format": "prettier --write .",
     "lint": "eslint .",
     "studio": "yarn workspace mobile studio",
