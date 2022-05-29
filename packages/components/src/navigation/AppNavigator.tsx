@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   SafeAreaView,
   ScrollView,
@@ -6,12 +6,68 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableHighlight,
+  Platform,
 } from 'react-native'
 
 import Button from '../components/primitives/Button2/Button'
 import { AppHeader } from '../components/composites/AppHeader/AppHeader'
 
-export function AppNavigator() {
+import { StateNavigator } from 'navigation'
+import { NavigationHandler, NavigationContext } from 'navigation-react'
+import { NavigationStack } from 'navigation-react-native'
+
+const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: 'white',
+    height: '100%',
+  },
+  engine: {
+    position: 'absolute',
+    right: 0,
+  },
+  body: {
+    backgroundColor: 'white',
+  },
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: 'black',
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: 'gray',
+  },
+  highlight: {
+    fontWeight: '700',
+  },
+  footer: {
+    color: 'gray',
+    fontSize: 12,
+    fontWeight: '600',
+    padding: 4,
+    paddingRight: 12,
+    textAlign: 'right',
+  },
+})
+
+declare let global: {
+  HermesInternal?: boolean
+}
+
+const stateNavigator = new StateNavigator([
+  { key: 'hello', route: '' },
+  { key: 'world', trackCrumbTrail: true },
+])
+
+const Hello = () => {
+  const { stateNavigator } = useContext(NavigationContext)
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -58,7 +114,13 @@ export function AppNavigator() {
                 <Text style={styles.highlight}>.native</Text>, etc).
               </Text>
               <View style={styles.sectionDescription}>
-                <Button color="red" text="Gezza's button" onClick={() => {}} />
+                <Button
+                  color="red"
+                  text="Gezza's button"
+                  onClick={() => {
+                    stateNavigator.navigate('world', { size: 20 })
+                  }}
+                />
               </View>
             </View>
           </View>
@@ -68,46 +130,24 @@ export function AppNavigator() {
   )
 }
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: 'white',
-    height: '100%',
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: 'white',
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: 'black',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: 'gray',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: 'gray',
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-})
-
-declare let global: {
-  HermesInternal?: boolean
+const World = () => {
+  const { data } = useContext(NavigationContext)
+  return <Text style={{ fontSize: data.size }}>World</Text>
 }
+
+const { hello, world } = stateNavigator.states
+
+hello.renderScene = () => <Hello />
+world.renderScene = () => <World />
+
+if (Platform.OS === 'web') stateNavigator.start()
+else stateNavigator.navigate('hello')
+
+const AppNavigator = () => (
+  //@ts-ignore
+  <NavigationHandler stateNavigator={stateNavigator}>
+    <NavigationStack />
+  </NavigationHandler>
+)
+
+export { AppNavigator }

@@ -12,6 +12,13 @@ const appIncludes = [
 ]
 
 module.exports = function override(config, env) {
+
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    'react-native$': 'react-native-web',
+    'navigation-react-native$': 'navigation-react-native-web',
+  }
+  
   // allow importing from outside of src folder
   config.resolve.plugins = config.resolve.plugins.filter(
     (plugin) => plugin.constructor.name !== 'ModuleScopePlugin',
