@@ -6,8 +6,6 @@ import { loadStories } from './storyLoader'
 
 import './rn-addons'
 
-addDecorator(withKnobs);
-
 // import stories
 configure(() => {
   loadStories()
@@ -26,6 +24,3 @@ const StorybookUIRoot = getStorybookUI({
 AppRegistry.registerComponent(appName, () => StorybookUIRoot)
 
 export default StorybookUIRoot
-
-// if you use expo remove this line
-import { AppRegistry } from 'react-native';

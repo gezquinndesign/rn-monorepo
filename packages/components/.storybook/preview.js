@@ -20,7 +20,6 @@ import {NativeBaseProvider} from 'native-base'
 //   LinkComponent
 // } from "../src/storybook/components";
 import styled from 'styled-components/native'
-import './vector-icons';
 
 export const StoryContainer = styled.View`
   height: 100vh;

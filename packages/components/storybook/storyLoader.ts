@@ -78,14 +78,6 @@ function loadStories() {
   require('../src/components/primitives/View/index.stories')
   require('../src/components/primitives/VStack/index.stories')
   require('../src/components/primitives/ZStack/index.stories')
-  require('../src/stand-alone-documentaion/accessibility/accessibility.stories')
-  require('../src/stand-alone-documentaion/changelog/changelog.stories')
-  require('../src/stand-alone-documentaion/colors/colors.stories')
-  require('../src/stand-alone-documentaion/motion/motion.stories')
-  require('../src/stand-alone-documentaion/shadow/shadow.stories')
-  require('../src/stand-alone-documentaion/spacing/spacing.stories')
-  require('../src/stand-alone-documentaion/typography/typography.stories')
-  require('../src/stand-alone-documentaion/welcome/welcome.stories')
 }
 
 const stories = [
@@ -163,14 +155,6 @@ const stories = [
   '../src/components/primitives/View/index.stories',
   '../src/components/primitives/VStack/index.stories',
   '../src/components/primitives/ZStack/index.stories',
-  '../src/stand-alone-documentaion/accessibility/accessibility.stories',
-  '../src/stand-alone-documentaion/changelog/changelog.stories',
-  '../src/stand-alone-documentaion/colors/colors.stories',
-  '../src/stand-alone-documentaion/motion/motion.stories',
-  '../src/stand-alone-documentaion/shadow/shadow.stories',
-  '../src/stand-alone-documentaion/spacing/spacing.stories',
-  '../src/stand-alone-documentaion/typography/typography.stories',
-  '../src/stand-alone-documentaion/welcome/welcome.stories',
 ]
 
 module.exports = {

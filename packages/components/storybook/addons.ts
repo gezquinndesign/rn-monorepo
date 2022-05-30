@@ -1,5 +1,5 @@
-import '@storybook/addon-actions/register'
-import '@storybook/addon-links/register'
-import '@storybook/addon-knobs/register';
-import '@storybook/addon-ondevice-actions/register';
-import '@storybook/addon-docs/register';
+// import '@storybook/addon-actions/register'
+// import '@storybook/addon-links/register'
+// import '@storybook/addon-ondevice-knobs/register';
+// import '@storybook/addon-ondevice-actions/register';
+// import '@storybook/addon-docs/register';
