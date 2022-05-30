@@ -8,7 +8,8 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath)
 // our packages that will now be included in the CRA build step
 const appIncludes = [
   resolveApp('src'),
-  resolveApp('../components/src')
+  resolveApp('../components'),
+  resolveApp('../../node_modules/react-native-vector-icons'),
 ]
 
 module.exports = function override(config, env) {
