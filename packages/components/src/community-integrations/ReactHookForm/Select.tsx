@@ -1,14 +1,15 @@
 import { VStack, Button, FormControl, Select, Icon } from 'native-base';
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import MaterialCommunityIcons from '../../libs/vector-icons';
+import {MaterialIcons} from '../../libs/vector-icons';
 
 interface IFormInput {
   language: number;
 }
 
 export const Example = () => {
-  const { control, handleSubmit, errors } = useForm<IFormInput>();
+  const { control, handleSubmit, errors = {} } = useForm<IFormInput>();
   const onSubmit = (data: IFormInput) => {
     console.log('submiting with ', data);
   };
