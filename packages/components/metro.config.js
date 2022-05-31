@@ -1,12 +1,14 @@
-const { getDefaultConfig } = require("metro-config");
+const { getDefaultConfig } = require('metro-config')
+const path = require('path');
 
 module.exports = (async () => {
   const {
-    resolver: { sourceExts }
-  } = await getDefaultConfig();
+    resolver: { sourceExts },
+  } = await getDefaultConfig()
   return {
+    projectRoot: path.resolve(__dirname, '../../'),
     transformer: {
-      babelTransformerPath: require.resolve("react-native-sass-transformer"),
+      babelTransformerPath: require.resolve('react-native-sass-transformer'),
       getTransformOptions: async () => ({
         transform: {
           experimentalImportSupport: false,
@@ -15,7 +17,7 @@ module.exports = (async () => {
       }),
     },
     resolver: {
-      sourceExts: [...sourceExts, "scss", "sass"]
-    }
-  };
+      sourceExts: [...sourceExts, 'scss', 'sass'],
+    },
+  }
 })()

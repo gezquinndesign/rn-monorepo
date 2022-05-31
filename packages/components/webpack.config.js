@@ -1,5 +1,18 @@
+const fs = require('fs')
 const path = require('path')
-const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
+
+const appDirectory = fs.realpathSync(process.cwd())
+const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath)
+
+const custom = require('../webpack.config')
+
+const appIncludes = [
+  resolveApp('src'),
+  resolveApp('../components'),
+  resolveApp('../../node_modules/react-native-vector-icons'),
+]
+
+const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
@@ -7,7 +20,6 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
   filename: 'index.html',
   inject: 'body',
 })
-
 
 module.exports = {
   entry: path.join(__dirname, 'index.web.js'),
@@ -31,48 +43,50 @@ module.exports = {
       //   loader: "url-loader", // or directly file-loader
       //   include: path.resolve(__dirname, "node_modules/react-native-vector-icons"),
       // },
-      {test: /\.ttf$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: './fonts/[hash].[ext]',
+      {
+        test: /\.ttf$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './fonts/[hash].[ext]',
+            },
           },
-        },
-      ],
-      include: [
-        path.resolve(__dirname, './src/assets/fonts'),
-        path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
-      ]},
-      
-        {
-          test: /\.(jpe?g|png|gif|svg)$/i,
-          use: [ 'url-loader?limit=10000', 'img-loader' ]
-        },
-        // {
-        //   // 2a. Load `.stories.mdx` / `.story.mdx` files as CSF and generate
-        //   //     the docs page from the markdown
-        //   test: /\.(stories|story)\.mdx$/,
-        //   use: [
-        //     {
-        //       // Need to add babel-loader as dependency: `yarn add -D babel-loader`
-        //       loader: require.resolve('babel-loader'),
-        //       // may or may not need this line depending on your app's setup
-        //       options: {
-        //         plugins: ['@babel/plugin-transform-react-jsx'],
-        //       },
-        //     },
-        //     {
-        //       loader: '@mdx-js/loader',
-        //       options: {
-        //         compilers: [createCompiler({})],
-        //       },
-        //     },
-        //   ],
-        // },
+        ],
+        include: [
+          path.resolve(__dirname, './src/assets/fonts'),
+          path.resolve(__dirname, '../../node_modules/react-native-vector-icons'),
+        ],
+      },
+
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: ['url-loader?limit=10000', 'img-loader'],
+      },
+      // {
+      //   // 2a. Load `.stories.mdx` / `.story.mdx` files as CSF and generate
+      //   //     the docs page from the markdown
+      //   test: /\.(stories|story)\.mdx$/,
+      //   use: [
+      //     {
+      //       // Need to add babel-loader as dependency: `yarn add -D babel-loader`
+      //       loader: require.resolve('babel-loader'),
+      //       // may or may not need this line depending on your app's setup
+      //       options: {
+      //         plugins: ['@babel/plugin-transform-react-jsx'],
+      //       },
+      //     },
+      //     {
+      //       loader: '@mdx-js/loader',
+      //       options: {
+      //         compilers: [createCompiler({})],
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: /\.(js|mjs|jsx|ts|tsx)$/,
-        // include: path.resolve(__dirname, "node_modules/react-native-vector-icons"),
+        include: appIncludes,
         exclude: /node_modules\/(?!()\/).*/,
         use: {
           loader: 'babel-loader',
@@ -96,19 +110,25 @@ module.exports = {
       //     {
       //       loader: '@mdx-js/loader',
       //       /** @type {import('@mdx-js/loader').Options} */
-      //       options: {/* jsxImportSource: …, otherOptions… */}
+      //       options: {/import { MaterialIcons } from 'react-native-vector-icons/dist/MaterialIcons';
+      // * jsxImportSource: …, otherOptions… */}
       //     }
       //   ]
       // },
       {
         test: /\.scss$/,
-          use: [{
-            loader: "style-loader"
-          }, {
-            loader: "css-loader" 
-          }, {
-            loader: "sass-loader"
-          }]}
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [HTMLWebpackPluginConfig],
