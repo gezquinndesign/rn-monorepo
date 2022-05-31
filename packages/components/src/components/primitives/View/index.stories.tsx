@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import Wrapper from '../../Wrapper';
 import { Example as Basic } from './Basic';
 
-storiesOf('View', module)
+storiesOf('Primitives View', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Basic', () => <Basic />);
