@@ -4,8 +4,6 @@ const path = require('path')
 const appDirectory = fs.realpathSync(process.cwd())
 const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath)
 
-const custom = require('../webpack.config')
-
 const appIncludes = [
   resolveApp('src'),
   resolveApp('../components'),

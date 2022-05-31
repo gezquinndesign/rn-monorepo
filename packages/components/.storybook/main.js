@@ -1,11 +1,12 @@
 require('regenerator-runtime/runtime')
 
+const custom = require('../webpack.config')
+
 module.exports = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-actions',
-    '@storybook/addon-ondevice-knobs',
     {
       name: '@storybook/addon-docs',
       options: {
