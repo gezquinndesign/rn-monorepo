@@ -1,8 +1,13 @@
-import { AppRegistry } from 'react-native'
-
+import { ComponentType } from 'react'
+import { AppRegistry } from 'react-native-web'
 import { App } from 'components/src/App'
+import { name as appName } from '../app.json'
 
-AppRegistry.registerComponent('myprojectname', () => App)
-AppRegistry.runApplication('myprojectname', {
-  rootTag: document.getElementById('root'),
-})
+const render = (AppComponent: ComponentType) => {
+  AppRegistry.registerComponent(appName, () => AppComponent)
+  AppRegistry.runApplication(appName, {
+    rootTag: document.getElementById('root'),
+  })
+}
+
+render(App)
