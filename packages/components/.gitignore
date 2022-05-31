@@ -1,17 +1,3 @@
-*.jsbundle
-*.tsbuildinfo
-.DS_Store
-.history
-.jest
-.vscode
-build
-coverage
-dist
-node_modules
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
 # OSX
 #
 .DS_Store
@@ -74,3 +60,15 @@ buck-out/
 /ios/Pods/
 
 storybook-static
+*.jsbundle
+*.tsbuildinfo
+.history
+.jest
+.vscode
+build
+coverage
+dist
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
