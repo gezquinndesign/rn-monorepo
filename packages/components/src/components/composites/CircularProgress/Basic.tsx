@@ -1,7 +1,7 @@
 import React from 'react';
 import { CircularProgress, Heading, Center } from 'native-base';
 import { number } from '@storybook/addon-knobs';
-console.log("HELLO",number)
+
 export const Example = () => {
   return (
     <Center>
