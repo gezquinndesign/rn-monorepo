@@ -1,6 +1,6 @@
-import React from 'react';
-import { IconButton, Icon, Box } from 'native-base';
-import Entypo from 'react-native-vector-icons/dist/Entypo';
+import React from 'react'
+import { IconButton, Icon, Box } from 'native-base'
+import { Entypo } from '../../../libs/vector-icons'
 
 export const Example = () => {
   return (
@@ -33,5 +33,5 @@ export const Example = () => {
         }}
       />
     </Box>
-  );
-};
+  )
+}

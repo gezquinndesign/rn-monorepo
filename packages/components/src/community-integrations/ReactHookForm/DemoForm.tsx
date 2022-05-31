@@ -13,15 +13,15 @@ import {
   Select,
   Checkbox,
   Icon,
-} from 'native-base';
-import React from 'react';
-import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-import EvilIcons from 'react-native-vector-icons/dist/EvilIcons';
-import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+} from 'native-base'
+import React from 'react'
+import { Ionicons } from '../../libs/vector-icons'
+import { EvilIcons } from '../../libs/vector-icons'
+import { AntDesign } from '../../libs/vector-icons'
 
 export const Example = () => {
-  const [language, setLanguage] = React.useState('eng');
-  const [currency, setCurrency] = React.useState('usd');
+  const [language, setLanguage] = React.useState('eng')
+  const [currency, setCurrency] = React.useState('usd')
   return (
     <VStack width="60%" space={4} my={6}>
       <Heading bold fontSize="2xl" pb={4}>
@@ -80,8 +80,7 @@ export const Example = () => {
             <HStack alignItems="center" space={6}>
               <Avatar
                 source={{
-                  uri:
-                    'https://images.unsplash.com/photo-1488282396544-0212eea56a21?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+                  uri: 'https://images.unsplash.com/photo-1488282396544-0212eea56a21?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
                 }}
                 size={'24'}
               >
@@ -135,7 +134,7 @@ export const Example = () => {
                   accessibilityLabel="Select your Language"
                   placeholder="Select your Language"
                   onValueChange={(itemValue: string) => {
-                    setLanguage(itemValue);
+                    setLanguage(itemValue)
                   }}
                 >
                   <Select.Item label="English" value="eng" />
@@ -155,7 +154,7 @@ export const Example = () => {
                   accessibilityLabel="Select your Currency"
                   placeholder="Select your Currency"
                   onValueChange={(itemValue: string) => {
-                    setCurrency(itemValue);
+                    setCurrency(itemValue)
                   }}
                 >
                   <Select.Item label="USD ($)" value="usd" />
@@ -225,5 +224,5 @@ export const Example = () => {
         </HStack>
       </Box>
     </VStack>
-  );
-};
+  )
+}
