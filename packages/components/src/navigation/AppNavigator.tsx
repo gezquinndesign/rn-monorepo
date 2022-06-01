@@ -61,10 +61,21 @@ declare let global: {
   HermesInternal?: boolean
 }
 
-const stateNavigator = new StateNavigator([
-  { key: 'hello', route: '' },
-  { key: 'world', trackCrumbTrail: true },
-])
+//TODO: remove all ts-ignores!
+// @ts-ignore
+const historyManager =
+  Platform.OS === 'web'
+    // @ts-ignore
+    ? new NavigationStack.HistoryManager(null, '')
+    : undefined
+
+const stateNavigator = new StateNavigator(
+  [
+    { key: 'hello', route: '' },
+    { key: 'world', trackCrumbTrail: true },
+  ],
+  historyManager,
+)
 
 const Hello = () => {
   const { stateNavigator } = useContext(NavigationContext)
