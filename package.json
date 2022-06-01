@@ -8,9 +8,12 @@
     ]
   },
   "scripts": {
-    "start:web": "yarn workspace web start",
-    "start:android": "yarn workspace mobile android",
-    "start:ios": "yarn workspace mobile ios",
+    "ui-android": "yarn workspace components sb:mob & yarn workspace components android",
+    "ui-ios": "yarn workspace components sb:mob & yarn workspace components ios",
+    "ui-web": "yarn workspace components sb:web",
+    "dev:android": "yarn workspace mobile compile && concurrently --kill-others \"yarn workspace mobile compile -w\" \"yarn workspace mobile android\"",
+    "dev:ios": "yarn workspace mobile compile && concurrently --kill-others \"yarn workspace mobile compile -w\" \"yarn workspace mobile ios\"",
+    "dev:web": "yarn workspace web compile && concurrently --kill-others \"yarn workspace web compile -w\" \"yarn workspace web start\"",
     "format": "prettier --write .",
     "lint": "eslint .",
     "studio": "yarn workspace mobile studio",
@@ -23,7 +26,6 @@
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
     "eslint": "7.32.0",
-    "eslint-config-airbnb-typescript": "16.2.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jsx-a11y": "6.5.1",
