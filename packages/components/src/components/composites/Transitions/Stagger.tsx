@@ -8,8 +8,8 @@ import {
   Icon,
   Center,
 } from 'native-base';
-import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+import { MaterialCommunityIcons } from '../../../libs/vector-icons';
+import { MaterialIcons } from '../../../libs/vector-icons';
 
 export const Example = () => {
   const { isOpen, onToggle } = useDisclose();

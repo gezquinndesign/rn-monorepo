@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar, Box, HStack, IconButton, Icon, Text} from 'native-base';
-import MaterialIcons from "react-native-vector-icons/dist/MaterialIcons";
+import { MaterialIcons } from '../../../libs/vector-icons';
 
 export function AppBar() {
   return (

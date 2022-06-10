@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, Heading, Center, VStack } from 'native-base';
-import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import { Ionicons } from '../../../libs/vector-icons';
 
 export const Example = () => {
   const sizes = ['10', '50px', '2xl'];

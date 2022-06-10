@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'native-base';
 import Foundation from 'react-native-vector-icons/dist/Foundation';
-import Feather from 'react-native-vector-icons/dist/Feather';
+import { Feather } from '../../../libs/vector-icons';
 import { View } from 'react-native';
 
 export const Example = () => {

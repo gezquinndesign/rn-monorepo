@@ -9,8 +9,8 @@ import {
   Stack,
   Center,
 } from 'native-base';
-import Feather from 'react-native-vector-icons/dist/Feather';
-import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+import { Feather } from '../../../libs/vector-icons';
+import { AntDesign } from '../../../libs/vector-icons';
 
 export const Example = () => {
   return (

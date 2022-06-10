@@ -1,8 +1,8 @@
 import React from 'react';
 import { Icon, Center, HStack } from 'native-base';
-import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
-import Entypo from 'react-native-vector-icons/dist/Entypo';
-import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+import { MaterialCommunityIcons } from '../../../libs/vector-icons';
+import { Entypo } from '../../../libs/vector-icons';
+import { AntDesign } from '../../../libs/vector-icons';
 
 export const Example = () => {
   return (

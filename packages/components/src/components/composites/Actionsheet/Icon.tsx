@@ -9,8 +9,8 @@ import {
   Center,
 } from 'native-base';
 import { Path } from 'react-native-svg';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
-import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import { MaterialIcons } from '../../../libs/vector-icons';
+import { Ionicons } from '../../../libs/vector-icons';
 
 export function Example() {
   const { isOpen, onOpen, onClose } = useDisclose();

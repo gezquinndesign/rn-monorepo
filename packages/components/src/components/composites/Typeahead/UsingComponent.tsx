@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typeahead, Icon } from 'native-base';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+import { MaterialIcons } from '../../../libs/vector-icons';
 
 const animals = [
   { id: 1, value: 'Aardvark' },

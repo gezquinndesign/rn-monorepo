@@ -1,6 +1,6 @@
 import React from 'react';
 import { Breadcrumb, Box, Heading, Icon } from 'native-base';
-import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import { Ionicons } from '../../../libs/vector-icons';
 
 export const Example = () => {
   return (

@@ -9,7 +9,7 @@ import {
 } from 'native-base';
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import { MaterialCommunityIcons } from '../../libs/vector-icons';
 
 interface IFormInput {
   hobbies: string;

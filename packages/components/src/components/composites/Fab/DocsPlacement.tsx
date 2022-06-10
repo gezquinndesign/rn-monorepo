@@ -1,6 +1,6 @@
 import { Fab, Icon, Box, Center } from 'native-base';
 import React from 'react';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+import { MaterialIcons } from '../../../libs/vector-icons';
 
 export const Example = () => {
   return (

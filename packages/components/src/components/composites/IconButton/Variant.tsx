@@ -1,6 +1,6 @@
 import React from 'react';
 import { Center, IconButton, VStack } from 'native-base';
-import AntDesign from 'react-native-vector-icons/dist/AntDesign';;
+import { AntDesign } from '../../../libs/vector-icons';;
 export const Example = () => {
   return (
     <Center>

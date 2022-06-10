@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox, Stack, Icon, Box } from 'native-base';
-import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import { MaterialCommunityIcons } from '../../../libs/vector-icons';
 
 export const Example = () => {
   return (

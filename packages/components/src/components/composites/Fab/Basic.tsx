@@ -1,6 +1,6 @@
 import { Fab, Icon, Box } from 'native-base';
 import React from 'react';
-import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+import { AntDesign } from '../../../libs/vector-icons';
 
 export const Example = () => {
   return (

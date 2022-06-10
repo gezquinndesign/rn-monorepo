@@ -12,8 +12,8 @@ import {
   Center,
   useToast,
 } from 'native-base';
-import Feather from 'react-native-vector-icons/dist/Feather';
-import Entypo from 'react-native-vector-icons/dist/Entypo';
+import { Feather } from '../../../libs/vector-icons';
+import { Entypo } from '../../../libs/vector-icons';
 
 export const Example = () => {
   const instState = [

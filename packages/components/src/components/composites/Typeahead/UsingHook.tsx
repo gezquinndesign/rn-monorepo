@@ -9,7 +9,7 @@ import {
   IconButton,
 } from 'native-base';
 import { ScrollView } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+import { MaterialIcons } from '../../../libs/vector-icons';
 
 let countries = [
   'Afghanistan',

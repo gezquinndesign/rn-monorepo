@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Breadcrumb, Box, Heading, HStack, Button } from 'native-base';
-import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
-import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+import { MaterialCommunityIcons } from '../../../libs/vector-icons';
+import { MaterialIcons } from '../../../libs/vector-icons';
+import { AntDesign } from '../../../libs/vector-icons';
 
 
 export const Example = () => {
