@@ -100,19 +100,6 @@ module.exports = {
       //     '@mdx-js/loader'
       //   ]
       // }
-      // {
-      //   test: /\.mdx?$/,
-      //   use: [
-      //     // `babel-loader` is optional:
-      //     {loader: 'babel-loader', options: {}},
-      //     {
-      //       loader: '@mdx-js/loader',
-      //       /** @type {import('@mdx-js/loader').Options} */
-      //       options: {/import { MaterialIcons } from 'react-native-vector-icons/dist/MaterialIcons';
-      // * jsxImportSource: …, otherOptions… */}
-      //     }
-      //   ]
-      // },
       {
         test: /\.scss$/,
         use: [

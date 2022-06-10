@@ -7,7 +7,7 @@ export function createWebFont(
   iconFontURL: string | any,
 ) {
   const cssText = [
-    `@font-face { src:url(${iconFontURL});font-family: ${fontFamily}; }`,
+    `@font-face { src:url(${iconFontURL});font-family: ${fontFamily}; format('ttf') }`,
   ].join('\n')
 
   return {
@@ -20,6 +20,7 @@ export function createWebFont(
     injectStyleTag() {
       const style = document.createElement('style')
       style.type = 'text/css'
+      style.id = `font-family-${fontFamily}`
 
       if ((style as any).styleSheet) {
         ;(style as any).styleSheet.cssText = cssText

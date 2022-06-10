@@ -16,15 +16,63 @@ module.exports = {
     {
       name: '@storybook/addon-react-native-web',
       options: {
-        modulesToTranspile: [
-          'react-native-vector-icons',
-        ],
+        modulesToTranspile: ['react-native-vector-icons'],
         // babelPlugins: ['react-native-reanimated/plugin'],
       },
     },
   ],
   framework: '@storybook/react',
   webpackFinal: (config) => {
+    // let fontCssRule = config.module.rules.find(rule => rule.test.toString() === /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/.toString());
+    let newCustomRules = custom.module.rules.filter(
+      (r) => r.test.toString() !== /\.ttf$/.toString(),
+    )
+    newCustomRules.concat([
+      {
+        test: /\.woff(\?.*$|$)/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?.*$|$)/,
+        loader: 'url-loader',
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg|ico)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true,
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
+      },
+    ])
 
     return {
       ...config,
@@ -37,7 +85,7 @@ module.exports = {
       },
       module: {
         ...config.module,
-        rules: [...config.module.rules, ...custom.module.rules],
+        rules: [...config.module.rules, ...newCustomRules],
       },
     }
   },
