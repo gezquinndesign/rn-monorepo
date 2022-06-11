@@ -35,5 +35,5 @@ module.exports = function override(config, env) {
     new webpack.DefinePlugin({ __DEV__: env !== 'production' }),
   )
 
-  return config
+  return config;
 }
