@@ -2,7 +2,7 @@ import React from "react"
 import { parameters } from "@storybook/addon-docs/dist/frameworks/react/config";
 import { addParameters, addDecorator } from "@storybook/react";
 import { DocsPage, DocsContainer } from "@storybook/addon-docs";
-import {NativeBaseProvider} from 'native-base'
+// import {NativeBaseProvider} from 'native-base'
 // import {
 //   SectionName,
 //   Title,
@@ -20,6 +20,16 @@ import {NativeBaseProvider} from 'native-base'
 //   LinkComponent
 // } from "../src/storybook/components";
 import styled from 'styled-components/native'
+import {AppProviders} from '../src/AppProviders'
+
+import { NativeBaseProvider, theme } from '../src/libs/native-base'
+// import { addDecorator } from '@storybook/react';
+import { withThemes } from '@react-theming/storybook-addon';
+
+// import { theme } from '../src/theme';
+
+// pass ThemeProvider and array of your themes to decorator
+addDecorator(withThemes(NativeBaseProvider,[theme]));
 
 export const StoryContainer = styled.View`
   height: 100vh;
@@ -110,7 +120,7 @@ addParameters({
 //   }
 // ];
 addDecorator(storyFn => (
-  <>
+        <AppProviders>
     <StoryContainer>{storyFn()}</StoryContainer>
-  </>
+  </AppProviders>
 ))

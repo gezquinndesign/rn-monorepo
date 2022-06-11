@@ -5,6 +5,7 @@ const custom = require('../webpack.config')
 module.exports = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
+    '@react-theming/storybook-addon',
     '@storybook/addon-links',
     '@storybook/addon-actions',
     {

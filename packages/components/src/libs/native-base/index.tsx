@@ -5,7 +5,7 @@ import {
   NativeBaseProviderProps,
 } from 'native-base'
 
-const theme = extendTheme({
+export const theme = extendTheme({
   components: {
     Input: {
       baseStyle: {

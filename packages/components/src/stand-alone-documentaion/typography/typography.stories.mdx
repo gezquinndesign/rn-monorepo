@@ -1,7 +1,64 @@
 import { Meta } from "@storybook/addon-docs/blocks";
+// import FontBlocks from "./FontBlocks";
+import {Heading} from 'native-base'
+import {
+  // NativeBaseProvider,
+  useColorMode,
+  Text,
+  Button,
+  Center,
+  Box,
+} from 'native-base';
+import { NativeBaseProvider } from '../../libs/native-base'
+import FontBlocks from './FontBlocks'
 
 <Meta title="Foundations/Typography" />
 
-Here's some typography _markdown_!
+# Typography
+
+<br />
+<br />
+
+## Intro
+
+This is Means. Our brand typeface.
+
+Means is the primary brand typeface for Mailchimp. An elegant serif infused with a quirky warmth, this headline face projects trustworthiness, optimism, and sincerity.
+
+The light weight sets an editorial tone while uncommon rounded corners infuse the typeface with a distinctive personality.
+
+Graphik is our supporting font
+
+Graphik is our workhorse typeface, carefully chosen to support Means in more functional moments. Purposefully plain, this sans-serif prioritizes legibility and balances the expressiveness of Means.
+
+## Type Scale
+We follow a 6px baseline grid for achieving a vertical rhythm on all block-level elements in the app.
+
+<!-- |   |   |   |
+|---|---|---|
+| Header | Title | Paragraph |
+| Heading One | 44px / 48px | Means Light |
+| Heading Two | 36px / 45px | Graphik · Regular |
+| Heading Three | 28px / 35px | Graphik · Regular |
+| Heading Four | 20px / 25px | Graphik · Regular |
+| Body Bold | 16px / 24px | Graphik · Medium |
+| Body | 16px / 24px| Graphik · Regular |
+| Button & Meta | 14px / 24px | Graphik · Medium | -->
+
+<NativeBaseProvider>
+<FontBlocks />
+</NativeBaseProvider>
+
+## Paragraphs
+The default body text is 16px. For optimum reading length, the paragraph width is capped at 635px.
+
+### Examples
+
+Main section title
+Sub-section title
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Small meta text
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
