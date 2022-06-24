@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 import { Example as Playground } from './playground';
 import { Example as Disabled } from './disabled';
 import { Example as CustomColor } from './customColor';
@@ -13,7 +13,7 @@ import { Example as WithRef } from './withRef';
 import { Example as ControlledRadio } from './controlledRadio';
 import { Example as UncontrolledRadio } from './uncontrolledRadio';
 
-storiesOf('Radio', module)
+storiesOf('Forms/Radio', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Controlled Radio', () => <ControlledRadio />)

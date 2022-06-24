@@ -6,7 +6,7 @@ import { NBButtons } from './NBButton';
 import { NativeBaseProvider, View as NBView } from 'native-base';
 import { View } from 'react-native';
 
-storiesOf('Button Perf', module)
+storiesOf('Buttons/Button Perf', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => (
     <NativeBaseProvider>{getStory()}</NativeBaseProvider>

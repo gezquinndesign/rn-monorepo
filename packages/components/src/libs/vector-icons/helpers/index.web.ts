@@ -7,7 +7,7 @@ export function createWebFont(
   iconFontURL: string | any,
 ) {
   const cssText = [
-    `@font-face { src:url(${iconFontURL});font-family: ${fontFamily}; format('ttf') }`,
+    `@font-face { src:url(${iconFontURL});font-family: ${fontFamily}; format('ttf'); font-display: swap; }`,
   ].join('\n')
 
   return {

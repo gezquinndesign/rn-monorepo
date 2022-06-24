@@ -1,0 +1,27 @@
+import { Meta } from "@storybook/addon-docs";
+import { Example as AllIcons }  from '../../components/primitives/Icon/AllIcons.tsx'
+
+<Meta title="Styles/Iconography" />
+
+# Iconography
+Icons in the design system are inline SVG. This provides the most flexibility for styling and prevents icons from loading slowly.
+
+## SVG icons
+
+<AllIcons />
+
+`title`
+
+Title allows you to insert invisible text for assistive software like screen readers. It's added as a title to the svg, has no effect on layout and is translatable by Google's translation service.
+
+If the icon is purely decorative, it does not need to have a title.
+
+`color`
+
+You can give the icon a specific fill color:
+
+`size`
+
+Use the size prop to change the size of an icon. Size can be set by using space tokens, type tokens or a hardcoded size value.
+
+

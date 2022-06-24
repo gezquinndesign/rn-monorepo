@@ -1,7 +1,37 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta } from "@storybook/addon-docs";
+import { Example as Fade } from '../../components/composites/Transitions/Fade';
+import { Example as ScaleFade } from '../../components/composites/Transitions/ScaleFade';
+import { Example as Slide } from '../../components/composites/Transitions/Slide';
+import { Example as SlideWrapped } from '../../components/composites/Transitions/SlideWrapped';
+import { Example as SlideFade } from '../../components/composites/Transitions/SlideFade';
+import { Example as Stagger } from '../../components/composites/Transitions/Stagger';
 
-<Meta title="Foundations/Motion" />
+<Meta title="Styles/Motion" />
 
-Here's some motion _markdown_!
+# Motion
 
+Animation is done via react-native-spring.
 
+## Fade
+
+<Fade />
+
+## Scale fade
+
+<ScaleFade />
+
+## Slide
+
+<Slide />
+
+## Slide wrapped inside parent
+
+<SlideWrapped />
+
+## Slide fade
+
+<SlideFade />
+
+## Stagger
+
+<Stagger />

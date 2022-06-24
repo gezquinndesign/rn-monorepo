@@ -1,126 +1,198 @@
-import React from "react"
-import { parameters } from "@storybook/addon-docs/dist/frameworks/react/config";
-import { addParameters, addDecorator } from "@storybook/react";
-import { DocsPage, DocsContainer } from "@storybook/addon-docs";
-// import {NativeBaseProvider} from 'native-base'
-// import {
-//   SectionName,
-//   Title,
-//   Tip,
-//   AnchorListItem,
-//   ComponentRules,
-//   ComponentName,
-//   UsageGuidelines,
-//   FunctionArguments,
-//   FunctionArgument,
-//   RelatedComponents,
-//   DocFooter,
-//   MultipleStoryElementsWrapper,
-//   Paragraph,
-//   LinkComponent
-// } from "../src/storybook/components";
-import styled from 'styled-components/native'
-import {AppProviders} from '../src/AppProviders'
+import React from 'react'
+import { addParameters, addDecorator } from '@storybook/react'
+import { DocsPage, DocsContainer } from '@storybook/addon-docs'
+import { AppProviders } from '../src/AppProviders'
 
 import { NativeBaseProvider, theme } from '../src/libs/native-base'
-// import { addDecorator } from '@storybook/react';
-import { withThemes } from '@react-theming/storybook-addon';
+import { Text, Link, Heading, View } from 'native-base'
+import Wrapper, { myTheme } from '../src/Wrapper'
 
-// import { theme } from '../src/theme';
+import { compareStoryPaths } from './sort'
+import { storybookTheme } from './manager'
+import { withKnobs } from '@storybook/addon-knobs'
+import { themes } from '@storybook/theming'
 
-// pass ThemeProvider and array of your themes to decorator
-addDecorator(withThemes(NativeBaseProvider,[theme]));
+import { sbTheme } from './theme'
+import { useDarkMode } from 'storybook-dark-mode';
 
-export const StoryContainer = styled.View`
-  height: 100vh;
-  width: 100vw;
-`
 
-addParameters({
+// const dark = true;
+
+// addDecorator()
+
+export const parameters = {
+  darkMode: {
+    // Override the default dark theme
+    dark: sbTheme.dark,
+    // Override the default light theme
+    light: sbTheme.light,
+  },
   controls: {
     expanded: true,
-    sort: "requiredFirst"
+    sort: 'requiredFirst',
   },
   docs: {
-    // ...parameters.docs,
+    source: { format: false },
     inlineStories: true,
-    container: DocsContainer,
+    container: ({ children, context }) => (
+      <Wrapper theme={myTheme}>
+        <DocsContainer context={{
+        ...context,
+        storyById: (id) => {
+          const storyContext = context.storyById(id);
+          return {
+            ...storyContext,
+            parameters: {
+              ...storyContext?.parameters,
+              docs: {
+                ...storyContext?.parameters?.docs,
+                theme: useDarkMode() ? sbTheme.dark : sbTheme.light,
+              },
+            },
+          };
+        },
+      }}>{children}</DocsContainer>
+      </Wrapper>
+    ),
+    // container: DocsContainer,
     page: DocsPage,
-    // components: {
-    //   h1: ComponentName,
-    //   h2: SectionName,
-    //   h3: Title,
-    //   li: AnchorListItem,
-    //   a: LinkComponent,
-    //   p: Paragraph,
-    //   Tip,
-    //   ComponentRules,
-    //   UsageGuidelines,
-    //   FunctionArguments,
-    //   FunctionArgument,
-    //   RelatedComponents
-    // }
-  },
-  viewMode: "docs",
-  previewTabs: {
-    "storybook/docs/panel": {
-      index: -1
+    components: {
+      // h1: ({ children }) => <Text fontSize="4xl" fontWeight={900}>{children}</Text>, // ComponentName
+      // h2: ({ children, context }) => <Text fontSize="lg">{children}</Text>,
+      // h3: ({ children, context }) => <Heading fontSize="md">{children}</Heading>,
+      // li: AnchorListItem,
+      // a: Link,
+      // p: Text,
+      // Tip,
+      // ComponentRules,
+      // UsageGuidelines,
+      // FunctionArguments,
+      // FunctionArgument,
+      // RelatedComponents
     },
-    canvas: { title: "Sandbox" }
   },
-  themes: {
-    default: "Light",
-    list: [
-      { name: "Light", class: "light-app-them", color: "#ffffff" },
-      { name: "Dark", class: "dark-app-theme", color: "#1C1F3B" },
-      { name: "Black", class: "black-app-theme", color: "#111111" },
-      { name: "Hacker", class: "hacker_theme-app-theme", color: "#282a36" }
-    ]
-  },
+  viewMode: 'docs',
   options: {
     showRoots: true,
-    storySort: (a, b) => {
-      // Control root level sort order.
-      const sort = [
-        "Introduction",
-        "Foundations",
-        "*",
-        "Accessibility",
-        "Hooks"
-      ];
-      const sortObj = {};
+    // storySort: {
+    //   method: 'alphabetical',
+    //   order: [
+    //     'Getting started',
+    //     'Principles',
+    //     'Guides',
+    //     'Styles',
+    //     'Layout',
+    //     'Buttons',
+    //     'Forms',
+    //     'Overlay',
+    //     'Media',
+    //     'Components',
+    //     '*',
+    //     ['Factory',
+    //     'Change Log',
+    //     'Icon',
+    //     'React Hook Form',
+    //     'Transitions'],
+    //   ], 
+    //   locales: '', 
+    // }
+    // storySort: (previous, next) => {
+    //   const [previousStory, previousMeta] = previous
+    //   const [nextStory, nextMeta] = next
 
-      sort.forEach(function(a, i) {
-        sortObj[a] = i + 1;
-      });
-
-      const aSplit = a[1].kind.split('/');
-      const bSplit = b[1].kind.split('/');
-
-      if (aSplit && bSplit) {
-        return (
-          sortObj[`${aSplit[0]}/${aSplit[1]}`] -
-          sortObj[`${bSplit[0]}/${bSplit[1]}`]
-        );
+    //   return anysort(previousMeta.kind, nextMeta.kind, [
+    //     'Getting started/**',
+    //         'Principles/**',
+    //         'Guides/**',
+    //         'Styles/**',
+    //         'Layout/**',
+    //         'Buttons/**',
+    //         'Forms/**',
+    //         'Overlay/**',
+    //         'Media/**',
+    //         'Components/**',
+    //         '/**',
+    //         // 'Factory',
+    //         // 'Change Log',
+    //         // 'Icon',
+    //         // 'React Hook Form',
+    //         // 'Transitions',
+    //   ])
+    // }
+    storySort: ([story1Id, story1], [story2Id, story2]) => {
+      // Note: keys must be in all lowercase
+      const storiesOrder = {
+        'getting started': {
+          introduction: null,
+        },
+        'getting started': {
+          introduction: null,
+        },
+        principles: {
+          'simple, robust and personal': null,
+        },
+        guides: {
+          accessibility: null,
+        },
+        styles: {
+          box: null,
+          center: null,
+          container: null,
+          flex: null,
+          hstack: null,
+          stack: null,
+          vstack: null,
+          zstack: null,
+        },
+        layout: {
+          stacks: null,
+          boxes: null,
+          simplegrid: null,
+          hidden: null,
+        },
+        buttons: null,
+        forms: null,
+        overlay: null,
+        media: null,
+        components: {
+          badge: null,
+          bars: null,
+          expanders: null,
+          lists: null,
+          loading: null,
+          media: null,
+          modal: null,
+          progress: null,
+          typography: null,
+          views: null,
+          //---------------//
+          // 'date input': null, // NOT IMPLEMENTED BUT NOT REQUIRED?
+          // 'date picker': null, // NOT IMPLEMENTED BUT REQUIRED - USE https://github.com/react-native-datetimepicker/datetimepicker
+          // 'file upload': null, // NOT IMPLEMENTED BUT REQUIRED
+          // 'inset text': null, // NOT IMPLEMENTED BUT NOT REQUIRED?
+          // 'logo': null, // NOT IMPLEMENTED BUT NOT REQUIRED?
+          // 'middle': null, // NOT IMPLEMENTED BUT COULD BE DECENT
+          // 'panel': null, // NOT IMPLEMENTED BUT COULD BE USEFUL TO CREATE-  https://docs.nativebase.io/next/migration/card#page-title
+          // 'srtext': null, // NOT IMPLEMENTED BUT COULD BE DECENT
+          // 'stepper': null, // Not implemented but nearest is NumberInput - Steps
+          // 'table': null,  // NOT IMPLEMENTED BUT COULD BE DECENT
+          // 'tabs': null, // NOT IMPLEMENTED BUT REQUIRED? - USE https://docs.nativebase.io/next/migration/tabs#page-title
+        },
+        'factory': null,
+        'change log': null
       }
 
-      return a - b;
-    }
-  }
-});
+      const story1Path = [...story1.kind.split('/'), story1.name].map((key) =>
+        key.toLowerCase(),
+      )
+      const story2Path = [...story2.kind.split('/'), story2.name].map((key) =>
+        key.toLowerCase(),
+      )
 
-// export const decorators = [
-//   (Story, { className }) => {
-//     return (
-//       <MultipleStoryElementsWrapper className={className}>
-//       <div style={{ background:"red", margin: '1rem' }}><Story /></div>
-        
-//       </MultipleStoryElementsWrapper>
-//     );
-//   }
-// ];
-addDecorator(storyFn => (
-        <AppProviders>
-    <StoryContainer>{storyFn()}</StoryContainer>
-  </AppProviders>
-))
+      // console.log(storiesOrder, story1Path, story2Path)
+      return compareStoryPaths(storiesOrder, story1Path, story2Path)
+    },
+  },
+}
+
+export const decorators = [(storyFn) => <Wrapper theme={myTheme}>{storyFn()}</Wrapper>]

@@ -1,10 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from '../../Wrapper';
-import { Example } from './basic';
+import Wrapper from '../../../Wrapper';
+import { Example as VStack } from './VStack';
+import { Example as Column } from './Column';
 
-storiesOf('VStack', module)
+storiesOf('Layout/Stacks/VStack or Column', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
-  .add('Basic', () => <Example />);
+  .add('VStack', () => <VStack />)
+  .add('Column', () => <Column />);

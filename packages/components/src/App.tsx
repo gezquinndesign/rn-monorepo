@@ -1,13 +1,11 @@
 import React from 'react'
-import { AppNavigator } from './navigation/AppNavigator'
-import { AppProviders } from './AppProviders'
+import AppProviders from './AppProviders'
+import AppNavigator from './navigation/AppNavigator'
 
 export function App() {
   return (
-    <>
-      <AppProviders>
-        <AppNavigator key="app-navigator" />
-      </AppProviders>
-    </>
+    <AppProviders>
+      <AppNavigator key="app-navigator" />
+     </AppProviders>
   )
 }

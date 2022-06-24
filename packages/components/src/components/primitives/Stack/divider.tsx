@@ -3,7 +3,7 @@ import { Stack, Divider, Box } from 'native-base';
 
 export function Example() {
   return (
-    <Stack space={3} alignItems="center">
+    <Stack           h="54" space={3} alignItems="center">
       <Box>
         <Stack
           direction="row"

@@ -1,7 +1,46 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta, DocsContainer } from '@storybook/addon-docs';
+// import FontBlocks from "./FontBlocks";
+import {
+  // NativeBaseProvider,
+  useColorMode,
+  Text,
+  Button,
+  Center,
+  Box,
+  Heading,
+  Code
+} from 'native-base';
+import { NativeBaseProvider } from '../../libs/native-base'
+import ColorBlocks from './ColorBlocks'
+import OpacityBlock from './OpacityBlock'
+import ShadowBlock from './ShadowBlock'
 
-<Meta title="Foundations/Colors" />
+<Meta title="Styles/Colors" />
 
-Here's some colors _markdown_!
+# Colors
+
+<br />
+<br />
+
+## Color
+
+You can add a theme.colors object to provide colors for your project. By default these colors can be referenced by the color, borderColor, backgroundColor, etc.. props.
+You can also add .alpha:{number} to add levels of opacity to a colour. The number can also be added in the theme file.
+Ex: red.300:alpha.30, You can read more about this in opacity section.
+
+We recommend adding a palette that ranges from 50 to 900. Tools like Smart Swatch, Palx are available to generate these palettes.
+
+<ColorBlocks />
 
 
+## Opacity
+
+The opacity key is used in opacity style object and to define colors opacity using the red-green-blue-alpha (RGBA) model, RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity of the color.
+
+<OpacityBlock />
+
+## Shadow
+
+The shadow key allows you to customize the global box shadow for your project.
+
+<ShadowBlock />

@@ -6,5 +6,11 @@ module.exports = {
     '@babel/plugin-proposal-class-properties',
     "@babel/proposal-object-rest-spread",
     'babel-plugin-styled-components',
+    [ "react-native-web", { "commonjs": true } ],
+    ["module-resolver", {
+      "alias": {
+        "^react-native$": "react-native-web"
+      }
+    }]
   ],
 }

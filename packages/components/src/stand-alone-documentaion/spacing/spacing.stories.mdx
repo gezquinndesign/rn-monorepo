@@ -1,7 +1,68 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta } from "@storybook/addon-docs";
+import { VStack, Heading, Text } from "native-base";
 
-<Meta title="Foundations/Spacing" />
+<Meta title="Styles/Spacing" />
 
-Here's some spacing _markdown_!
+# Spacing
 
+The system uses a responsive scale and takes advantage of rem units to respond to changes in the root font size.
 
+Using a responsive scale enables layouts to automatically resize and continue to work as viewports and font sizes change.
+
+This is important as users can adjust the root font size in their browsers, which they may do for accessibility reasons.
+
+By default, the system also increases the root font size as the viewport width increases to make use of extra screen space (this is customisable per-app).
+
+| Default breakpoints           | Font size | Computed font size at default browser setting |
+| ----------------------------- | --------- | --------------------------------------------- |
+| **viewport < 731px**          | 100%      | 16px                                          |
+| **731px < viewport < 1695px** | 125%      | 20px                                          |
+| **viewport > 1695px**         | 162.5%    | 26px                                          |
+
+## Scale
+| Name/rem value | Root font size 16px | Root font size 20px | Root font size 26px |
+| -------------- | ------------------- | ------------------- | ------------------- |
+| **0.125**      | 2px                 | 2.5px               | 3.25px              |
+| **0.25**       | 4px                 | 5px                 | 6.5px               |
+| **0.5**        | 8px                 | 10px                | 13px                |
+| **0.75**       | 12px                | 15px                | 19.5px              |
+| **1**          | 16px                | 20px                | 26px                |
+| **1.25**       | 20px                | 25px                | 32.5px              |
+| **1.5**        | 24px                | 30px                | 39px                |
+| **2**          | 32px                | 40px                | 52px                |
+| **2.75**       | 44px                | 55px                | 71.5px              |
+| **3.75**       | 60px                | 75px                | 97.5px              |
+| **5**          | 80px                | 100px               | 130px               |
+| **6.5**        | 104px               | 130px               | 169px               |
+| **8.25**       | 132px               | 165px               | 214.5px             |
+| **10.25**      | 164px               | 205px               | 266.5px             |
+
+## VStack
+VStack lets you insert space between child flow elements, creating a regular rhythm without 'left over' margins at the top or bottom. For example, the elements inside the following VStack element will have an earth size margin separating them on the vertical axis (earth is default):
+
+<VStack space={3}>
+  <Text fontSize="lg">A heading</Text>
+  <Text>Lorem ipsum</Text>
+  <Text>Dolor sit amet</Text>
+</VStack>
+
+<br />
+<br />
+
+### Nesting
+You can quickly divide the flow content into visually distinct sections, by nesting VStack elements. In the following, the two sections are separated by a space of the saturn spacing, while elements within each of the two sections are spaced using the default earth spacing.
+
+<VStack space={6}>
+  <VStack space={3}>
+    <Text fontSize="lg">First section heading</Text>
+    <Text>Lorem ipsum</Text>
+    <Text>Dolor sit amet</Text>
+  </VStack>
+  <VStack space={3}>
+    <Text fontSize="lg">Second section heading</Text>
+    <Text>Lorem ipsum</Text>
+    <Text>Dolor sit amet</Text>
+  </VStack>
+</VStack>
+
+You can override the generic spacing within a 'VStack' on a per-element basis.

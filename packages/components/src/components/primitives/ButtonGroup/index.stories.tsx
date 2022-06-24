@@ -6,9 +6,9 @@ import { Example as Basic } from './basic';
 import { Example as Variants } from './variants';
 import { Example as IsAttached } from './isAttached';
 import { Example as Direction } from './direction';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 
-storiesOf('ButtonGroup', module)
+storiesOf('Buttons/ButtonGroup', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Basic', () => <Basic />)

@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 import { Example as Placement } from './Placement';
 import { Example as Basic } from './Basic';
 import { Example as CustomPosition } from './CustomPosition';
 
-storiesOf('Fab', module)
+storiesOf('Buttons/Fab', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Basic', () => <Basic />)

@@ -10,9 +10,9 @@ import { Example as Composition } from './composition';
 // import { Example as CompositionCard2 } from './composition-card2';
 // import { Example as CompositionCard3 } from './composition-card3';
 // import { Example as CompositionShoesCard } from './composition-shoes-card';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 
-storiesOf('Box', module)
+storiesOf('Layout/Boxes/Box', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Basic Box', () => <Basic />)

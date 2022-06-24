@@ -4,29 +4,11 @@ import {
   extendTheme,
   NativeBaseProviderProps,
 } from 'native-base'
-
-export const theme = extendTheme({
-  components: {
-    Input: {
-      baseStyle: {
-        // borderColor: "#000",
-        backgroundColor: '#14161a',
-        _focus: {
-        //   borderColor: "#00b",
-          backgroundColor: '#090a0c'
-        },
-        // _hover: {
-        //   borderColor: "#00b",
-        //   backgroundColor: "#fff"
-        // }
-      },
-    },
-  },
-})
+import { theme } from '../../../core/theme'
 
 export function NativeBaseProvider(props: NativeBaseProviderProps) {
   return (
-    <OriginalNativeBaseProvider theme={theme}>
+    <OriginalNativeBaseProvider theme={  extendTheme(theme)}>
       {props.children}
     </OriginalNativeBaseProvider>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 import { Example as Usage } from './usage';
 import { Example as Size } from './Size';
 import { Example as Vertical } from './Vertical';
@@ -13,7 +13,7 @@ import { Example as Playground } from './Playground';
 import { Example as Disabled } from './isDisabled';
 import { Example as ReadOnly } from './isReadOnly';
 
-storiesOf('Slider', module)
+storiesOf('Forms/Slider', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Playground', () => <Playground />)

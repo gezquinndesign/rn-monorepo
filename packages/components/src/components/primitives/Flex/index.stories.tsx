@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
 import { Example as Flex } from './basic';
 import { Example as SpacerExample } from './spacer';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 
-storiesOf('Flex', module)
+storiesOf('Layout/Boxes/Flex', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Basic Usage', () => <Flex />)

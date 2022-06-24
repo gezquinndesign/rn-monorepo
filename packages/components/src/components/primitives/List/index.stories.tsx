@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 import { Example as UnorderedList } from './UnorderedList';
 import { Example as StylingList } from './StylingList';
 import { Example as OrderedList } from './OrderedList';
@@ -10,7 +10,7 @@ import { Example as ListWithIcon } from './ListWithIcon';
 import { Example as PressableList } from './PressableList';
 import { Example as VirtualizedList } from './VirtualizedList';
 
-storiesOf('List', module)
+storiesOf('Components/Lists/List', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Basic', () => <Basic />)

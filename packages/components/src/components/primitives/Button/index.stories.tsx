@@ -8,9 +8,9 @@ import { Example as Variants } from './variants';
 import { Example as Loading } from './loading';
 import { Example as Icons } from './icons';
 import { Example as Composition } from './Composition';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 
-storiesOf('Button', module)
+storiesOf('Buttons/Button', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Basic', () => <Basic />)

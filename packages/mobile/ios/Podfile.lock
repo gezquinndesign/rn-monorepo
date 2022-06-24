@@ -74,7 +74,7 @@ PODS:
   - fmt (6.2.1)
   - glog (0.3.5)
   - libevent (2.1.12)
-  - navigation-react-native (8.8.2):
+  - navigation-react-native (8.9.0):
     - React-Core
   - OpenSSL-Universal (1.1.1100)
   - RCT-Folly (2021.06.28.00-v2):
@@ -284,7 +284,7 @@ PODS:
   - React-jsinspector (0.68.0)
   - React-logger (0.68.0):
     - glog
-  - react-native-safe-area-context (4.2.5):
+  - react-native-safe-area-context (4.3.1):
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
@@ -528,7 +528,7 @@ SPEC CHECKSUMS:
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 476ee3e89abb49e07f822b48323c51c57124b572
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  navigation-react-native: a875aed5719121f572a53e424cb2a50efa0073a7
+  navigation-react-native: c05ced550ca8d1027512a490d316d08460f5fedc
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   RCT-Folly: 4d8508a426467c48885f1151029bc15fa5d7b3b8
   RCTRequired: bab4a7c3d7eb9553b13773ee190f279712efd1fc
@@ -543,7 +543,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 010a66edf644339f6da72b34208b070089680415
   React-jsinspector: 90f0bfd5d04e0b066c29216a110ffb9a6c34f23f
   React-logger: 8474fefa09d05f573a13c044cb0dfd751d4e52e3
-  react-native-safe-area-context: ebf8c413eb8b5f7c392a036a315eb7b46b96845f
+  react-native-safe-area-context: 6c12e3859b6f27b25de4fee8201cfb858432d8de
   React-perflogger: 15cb741d6c2379f4d3fc8f9e4d4e1110ef3020cb
   React-RCTActionSheet: ea9099db0597bd769430db1e2d011fd5fdb7fc5e
   React-RCTAnimation: 252df4749866f2654f37612f839522cac91c1165
@@ -561,6 +561,6 @@ SPEC CHECKSUMS:
   Yoga: 6671cf077f614314c22fd09ddf87d7abeee64e96
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 1337040bd064f68ab04e22f6e5325410f4853560
+PODFILE CHECKSUM: 41e740d41cba29477ecdb25004b475928517ce7e
 
 COCOAPODS: 1.11.3

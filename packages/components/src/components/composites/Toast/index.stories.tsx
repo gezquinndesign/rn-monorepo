@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 import { Example as ToastPositions } from './ToastPositions';
 import { Example as ToastVariants } from './VariantRecipies';
 import { Example as Basic } from './Basic';
@@ -12,7 +12,7 @@ import { Example as PreventDuplicate } from './PreventDuplicate';
 import { Example as ToastStatus } from './StatusRecipies';
 import { Example as StandaloneToast } from './StandaloneToast';
 
-storiesOf('Toast', module)
+storiesOf('Overlay/Toast', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Basic', () => <Basic />)

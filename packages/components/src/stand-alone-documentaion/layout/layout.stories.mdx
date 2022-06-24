@@ -1,0 +1,25 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Styles/Layout" />
+
+# Layout
+We have three types of page layouts: mini (max width 28rem), midi (max width 48rem), and maxi (max width 56 rem).
+
+### Mini
+Used in Bulb Account on login screens where there is a single clear user action and limited content to be displayed.
+
+### Midi
+Typically used in step-by-step flows, such as FIT and Warm Home Discount sign up forms, Join, and the Move Out flow in Bulb Account.
+
+### Maxi
+Used on most screens in Bulb Account and on the Marketing site, where the layout breaks into multiple columns.
+
+These are always centered aligned on the page using `<PageContainer />`, which also provides a horizontal padding of Earth. This prevents the content touching the window edges in narrow viewports.
+
+👀 See also: Panels section provides an example of `<PageContainer />` that provides these layouts.
+
+## Layout combined with typography
+The table below shows how layout and typography settings are combined across Bulb products to achieve different purposes. 16px and 20px are the base font sizes, 48rem and 56rem are the maximum container widths.
+
+👀 See also: The Typography section provides more detail on typographic scale at different break points.
+

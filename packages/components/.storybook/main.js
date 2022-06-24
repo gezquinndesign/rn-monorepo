@@ -1,13 +1,13 @@
 require('regenerator-runtime/runtime')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const custom = require('../webpack.config')
 
 module.exports = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
-    '@react-theming/storybook-addon',
-    '@storybook/addon-links',
-    '@storybook/addon-actions',
+    'storybook-dark-mode/register',
+    '@storybook/addon-knobs',
     {
       name: '@storybook/addon-docs',
       options: {
@@ -83,11 +83,25 @@ module.exports = {
           ...config.resolve.extensions,
           ...custom.resolve.extensions,
         ],
+        plugins: [
+          ...(config.resolve.plugins || []),
+          ...(custom.resolve.plugins || []),
+          new TsconfigPathsPlugin({
+            extensions: [
+              ...config.resolve.extensions,
+              ...custom.resolve.extensions,
+            ]
+          }),
+        ]
       },
       module: {
         ...config.module,
         rules: [...config.module.rules, ...newCustomRules],
       },
     }
+    // const util = require('util')
+
+    // console.log(util.inspect(c, false, null, true /* enable colors */))
+    // return c
   },
 }

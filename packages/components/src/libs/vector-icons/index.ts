@@ -1,31 +1,67 @@
 import { IColors } from 'native-base/lib/typescript/theme/base/colors'
 
-import { MaterialIconProps } from './fonts/materialicons/MaterialIcons'
-import { MaterialCommunityIconProps } from './fonts/materialcommunityicons/MaterialCommunityIcons'
-import { OcticonIconProps } from './fonts/octicons/Octicons'
-import { EntypoIconProps } from './fonts/entypo/Entypo'
-import { FeatherIconProps } from './fonts/feather/Feather'
-import { FoundationIconProps } from './fonts/foundation/Foundation'
-import { AntDesignIconProps } from './fonts/antdesign/AntDesign'
-import { FontAwesomeIconProps } from './fonts/fontawesome/FontAwesome'
-import { IoniconsIconProps } from './fonts/ionicons/Ionicons'
+import { AntDesignIconProps } from './icons/antdesign/AntDesign'
+import { EntypoIconProps } from './icons/entypo/Entypo'
+import { EvilIconsIconProps } from './icons/evilicons/EvilIcons'
+import { FeatherIconProps } from './icons/feather/Feather'
+import { FontAwesomeIconProps } from './icons/fontawesome/FontAwesome'
+import { FontistoIconProps } from './icons/fontisto/Fontisto'
+import { FoundationIconProps } from './icons/foundation/Foundation'
+import { IoniconsIconProps } from './icons/ionicons/Ionicons'
+import { MaterialCommunityIconProps } from './icons/materialcommunityicons/MaterialCommunityIcons'
+import { MaterialIconProps } from './icons/materialicons/MaterialIcons'
+import { OcticonIconProps } from './icons/octicons/Octicons'
+import { SimpleLineIconsIconProps } from './icons/simplelineicons/SimpleLineIcons'
+import { ZocialIconProps } from './icons/zocial/Zocial'
 
-export * from './fonts/materialicons/MaterialIcons'
-export * from './fonts/materialcommunityicons/MaterialCommunityIcons'
-export * from './fonts/octicons/Octicons'
-export * from './fonts/entypo/Entypo'
-export * from './fonts/feather/Feather'
-export * from './fonts/foundation/Foundation'
-export * from './fonts/antdesign/AntDesign'
-export * from './fonts/fontawesome/FontAwesome'
-export * from './fonts/ionicons/Ionicons'
+export * from './icons/antdesign/AntDesign'
+export * from './icons/entypo/Entypo'
+export * from './icons/evilicons/EvilIcons'
+export * from './icons/feather/Feather'
+export * from './icons/fontawesome/FontAwesome'
+export * from './icons/fontisto/Fontisto'
+export * from './icons/foundation/Foundation'
+export * from './icons/ionicons/Ionicons'
+export * from './icons/materialcommunityicons/MaterialCommunityIcons'
+export * from './icons/materialicons/MaterialIcons'
+export * from './icons/octicons/Octicons'
+export * from './icons/simplelineicons/SimpleLineIcons'
+export * from './icons/zocial/Zocial'
 
 export type IconProp = {
   color?: keyof IColors
 } & (
   | {
-      family: 'octicon'
-      name: OcticonIconProps['name']
+      family: 'antdesign'
+      name: AntDesignIconProps['name']
+    }
+  | {
+      family: 'entypo'
+      name: EntypoIconProps['name']
+    }
+  | {
+      family: 'evilicons'
+      name: EvilIconsIconProps['name']
+    }
+  | {
+      family: 'feather'
+      name: FeatherIconProps['name']
+    }
+  | {
+      family: 'fontawesome'
+      name: FontAwesomeIconProps['name']
+    }
+  | {
+      family: 'fontisto'
+      name: FontistoIconProps['name']
+    }
+  | {
+      family: 'foundation'
+      name: FoundationIconProps['name']
+    }
+  | {
+      family: 'ionicons'
+      name: IoniconsIconProps['name']
     }
   | {
       family: 'material'
@@ -36,27 +72,15 @@ export type IconProp = {
       name: MaterialCommunityIconProps['name']
     }
   | {
-      family: 'entypo'
-      name: EntypoIconProps['name']
+      family: 'octicon'
+      name: OcticonIconProps['name']
     }
   | {
-      family: 'feather'
-      name: FeatherIconProps['name']
+      family: 'simplelineicons'
+      name: SimpleLineIconsIconProps['name']
     }
   | {
-      family: 'foundation'
-      name: FoundationIconProps['name']
-    }
-  | {
-      family: 'antdesign'
-      name: AntDesignIconProps['name']
-    }
-  | {
-      family: 'fontawesome'
-      name: FontAwesomeIconProps['name']
-    }
-  | {
-      family: 'ionicons'
-      name: IoniconsIconProps['name']
+      family: 'zocial'
+      name: ZocialIconProps['name']
     }
 )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../../../Wrapper';
 import {Example as Usage} from './Usage';
 import {Example as ManageFocus} from './ManageFocus';
 import {Example as DefaultValue} from './DefaultValue';
@@ -11,7 +11,7 @@ import {Example as Variants} from './Variants';
 import {Example as FormControlled} from './FormControlled';
 import {Example as Placeholder} from './Placeholder';
 
-storiesOf('PinInput', module)
+storiesOf('Forms/PinInput', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Playground', () => <Playground />)

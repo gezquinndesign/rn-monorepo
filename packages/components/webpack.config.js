@@ -57,10 +57,10 @@ module.exports = {
         ],
       },
 
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        use: ['url-loader?limit=10000', 'img-loader'],
-      },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/i,
+      //   use: ['url-loader?limit=10000', 'img-loader'],
+      // },
       // {
       //   // 2a. Load `.stories.mdx` / `.story.mdx` files as CSF and generate
       //   //     the docs page from the markdown

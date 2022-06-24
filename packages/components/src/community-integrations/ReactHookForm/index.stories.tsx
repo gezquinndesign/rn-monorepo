@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from '../../components/Wrapper';
+import Wrapper from '../../Wrapper';
 import { Example as RadioAndCheckbox } from './RadioAndCheckbox';
 import { Example as PinInput } from './PinInput';
 import { Example as Textarea } from './Textarea';
@@ -12,7 +12,7 @@ import { Example as Slider } from './Slider';
 import { Example as DemoForm } from './DemoForm';
 import { Example as Usage } from './Usage';
 
-storiesOf('React Hook Form', module)
+storiesOf('Misc/React Hook Form', module)
   .addDecorator(withKnobs)
   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
   .add('Usage', () => <Usage />)

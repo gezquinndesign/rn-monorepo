@@ -23,7 +23,6 @@ function loadStories() {
   require('../src/components/composites/Card/index.stories')
   require('../src/components/composites/Center/index.stories')
   require('../src/components/composites/CircularProgress/index.stories')
-  require('../src/components/composites/Code/index.stories')
   require('../src/components/composites/Collapse/index.stories')
   require('../src/components/composites/Container/index.stories')
   require('../src/components/composites/Divider/index.stories')
@@ -32,7 +31,6 @@ function loadStories() {
   require('../src/components/composites/factory/index.stories')
   require('../src/components/composites/FormControl/index.stories')
   require('../src/components/composites/IconButton/index.stories')
-  require('../src/components/composites/Kbd/index.stories')
   require('../src/components/composites/Menu/index.stories')
   require('../src/components/composites/Modal/index.stories')
   require('../src/components/composites/NumberInput/index.stories')
@@ -55,7 +53,6 @@ function loadStories() {
   require('../src/components/primitives/Button2/Button.stories')
   require('../src/components/primitives/ButtonGroup/index.stories')
   require('../src/components/primitives/Checkbox/index.stories')
-  require('../src/components/primitives/Column/index.stories')
   require('../src/components/primitives/Flex/index.stories')
   require('../src/components/primitives/Heading/index.stories')
   require('../src/components/primitives/Hidden/index.stories')
@@ -67,7 +64,6 @@ function loadStories() {
   require('../src/components/primitives/List/index.stories')
   require('../src/components/primitives/Pressable/index.stories')
   require('../src/components/primitives/Radio/index.stories')
-  require('../src/components/primitives/Row/index.stories')
   require('../src/components/primitives/Select/index.stories')
   require('../src/components/primitives/Slider/index.stories')
   require('../src/components/primitives/Spinner/index.stories')
@@ -100,7 +96,6 @@ const stories = [
   '../src/components/composites/Card/index.stories',
   '../src/components/composites/Center/index.stories',
   '../src/components/composites/CircularProgress/index.stories',
-  '../src/components/composites/Code/index.stories',
   '../src/components/composites/Collapse/index.stories',
   '../src/components/composites/Container/index.stories',
   '../src/components/composites/Divider/index.stories',
@@ -109,7 +104,6 @@ const stories = [
   '../src/components/composites/factory/index.stories',
   '../src/components/composites/FormControl/index.stories',
   '../src/components/composites/IconButton/index.stories',
-  '../src/components/composites/Kbd/index.stories',
   '../src/components/composites/Menu/index.stories',
   '../src/components/composites/Modal/index.stories',
   '../src/components/composites/NumberInput/index.stories',
@@ -132,7 +126,6 @@ const stories = [
   '../src/components/primitives/Button2/Button.stories',
   '../src/components/primitives/ButtonGroup/index.stories',
   '../src/components/primitives/Checkbox/index.stories',
-  '../src/components/primitives/Column/index.stories',
   '../src/components/primitives/Flex/index.stories',
   '../src/components/primitives/Heading/index.stories',
   '../src/components/primitives/Hidden/index.stories',
@@ -144,7 +137,6 @@ const stories = [
   '../src/components/primitives/List/index.stories',
   '../src/components/primitives/Pressable/index.stories',
   '../src/components/primitives/Radio/index.stories',
-  '../src/components/primitives/Row/index.stories',
   '../src/components/primitives/Select/index.stories',
   '../src/components/primitives/Slider/index.stories',
   '../src/components/primitives/Spinner/index.stories',

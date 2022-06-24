@@ -1,7 +1,7 @@
 // import React from 'react';
 // import { storiesOf } from '@storybook/react-native';
 // import { withKnobs } from '@storybook/addon-knobs';
-// import Wrapper from '../../Wrapper';
+// import Wrapper from '../../../Wrapper';
 // import { Example as Usage } from './Usage';
 // import { Example as Controlled } from './Controlled';
 // import { Example as TabBarOnly } from './TabBarOnly';
@@ -13,7 +13,7 @@
 // import { Example as Composition } from './Composition';
 // import { Example as Variants } from './Variants';
 
-// storiesOf('Tabs', module)
+// storiesOf('Components/Tabs', module)
 //   .addDecorator(withKnobs)
 //   .addDecorator((getStory: any) => <Wrapper>{getStory()}</Wrapper>)
 //   .add('Basic', () => <Usage />)

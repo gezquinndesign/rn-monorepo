@@ -1,7 +1,7 @@
-import React from 'react';
-import { ScrollView, VStack, Center, useTheme, Heading } from 'native-base';
+import React from 'react'
+import { ScrollView, VStack, Center, useTheme, Heading } from 'native-base'
 export const Example = () => {
-  const { colors } = useTheme();
+  const { colors } = useTheme()
   return (
     <ScrollView
       maxW="300"
@@ -19,10 +19,10 @@ export const Example = () => {
         {Object.keys(colors.cyan).map((key, index) => {
           if (index >= 1 && index <= 5)
             return (
-              <Center py="4" bg={`cyan.${key}`}>
+              <Center key={key} py="4" bg={`cyan.${key}`}>
                 {key}
               </Center>
-            );
+            )
         })}
       </VStack>
       <Center mt="8" mb="4">
@@ -32,10 +32,10 @@ export const Example = () => {
         {Object.keys(colors.cyan).map((key, index) => {
           if (index >= 1 && index <= 5)
             return (
-              <Center py="4" bg={`yellow.${key}`}>
+              <Center key={key} py="4" bg={`yellow.${key}`}>
                 {key}
               </Center>
-            );
+            )
         })}
       </VStack>
       <Center mt="8" mb="4">
@@ -45,12 +45,12 @@ export const Example = () => {
         {Object.keys(colors.violet).map((key, index) => {
           if (index >= 1 && index <= 5)
             return (
-              <Center py="4" bg={`violet.${key}`}>
+              <Center key={key} py="4" bg={`violet.${key}`}>
                 {key}
               </Center>
-            );
+            )
         })}
       </VStack>
     </ScrollView>
-  );
-};
+  )
+}

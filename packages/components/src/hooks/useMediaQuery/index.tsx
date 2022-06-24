@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
-import Wrapper from './../../components/Wrapper';
+import Wrapper from '../../../Wrapper';
 import { Example as MinWidth } from './min-width';
 import { Example as MaxHeight } from './max-height';
 import { Example as Orientation } from './orientation';
