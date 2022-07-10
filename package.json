@@ -23,7 +23,7 @@
     "rename": "yarn workspace components rename && yarn workspace mobile rename && yarn workspace web rename"
   },
   "devDependencies": {
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "4.0.0",
     "husky": "7.0.4",
     "lint-staged": "12.3.7",
     "prettier": "2.6.2",

@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '../../../libs/vector-icons';
 import { Entypo } from '../../../libs/vector-icons';
 import { AntDesign } from '../../../libs/vector-icons';
 
-export const Example = () => {
+export const ThirdPartyIcons = () => {
   return (
     <Center>
       <HStack space={3}>

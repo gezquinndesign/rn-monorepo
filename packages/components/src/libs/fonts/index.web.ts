@@ -1,6 +1,4 @@
-export * from './Luckybones/Luckybones'
 export * from './NunitoSans/NunitoSans'
-export * from './FiraCode/FiraCode'
 
 const cssText = [
   `html {

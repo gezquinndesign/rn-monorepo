@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon, Center } from 'native-base';
 import { Path, G } from 'react-native-svg';
-export const Example = () => {
+export const CustomIcon = () => {
   return (
     <Center>
       <Icon size="4xl" viewBox="0 0 870 873">

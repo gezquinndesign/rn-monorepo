@@ -4,11 +4,6 @@ import { default as base } from 'native-base/lib/module/theme/base'
 export const theme = {
   ...base,
   fontConfig: {
-    Luckybones: {
-      700: {
-        normal: 'Luckybones-Bold',
-      },
-    },
     NunitoSans: {
       200: {
         normal: 'NunitoSans-ExtraLight',
@@ -39,85 +34,43 @@ export const theme = {
         italic: 'NunitoSans-BlackItalic',
       },
     },
-    FiraCode: {
-      300: {
-        normal: 'FiraCode-Light',
-      },
-      400: {
-        normal: 'FiraCode-Regular',
-      },
-      500: {
-        normal: 'FiraCode-Medium',
-      },
-      600: {
-        normal: 'FiraCode-SemiBold',
-      },
-      700: {
-        normal: 'FiraCode-Bold',
-      },
-    },
   },
   fonts: {
-    heading: 'Luckybones-Bold',
+    heading: 'NunitoSans-Regular',
     body: 'NunitoSans-Regular',
-    mono: 'FiraCode',
+    mono: 'NunitoSans-Light',
   },
-  lineHeights: {
-    '2xs': '2.4em',
-    xs: '2em',
-    sm: '1.7em',
-    md: '1.5em',
-    lg: '1.25em',
-    xl: '1.25em',
-    '2xl': '1.25em',
-    '3xl': '1.1em',
-    '4xl': '1.25em',
-    '5xl': '1.25em',
-    '6xl': '1.25em',
-    '7xl': '1.25em',
-  },
-  // fontSizes: {
-  //   '2xs': '1rem',
-  //   xs: '1.2rem',
-  //   sm: '1.4rem',
-  //   md: '1.6rem',
-  //   lg: '2rem',
-  //   xl: '2.8rem',
-  //   '2xl': '3.6rem',
-  //   '3xl': '4.4rem',
-  //   '4xl': '6rem',
-  //   '5xl': '7.2rem',
-  //   '6xl': '9.6rem',
-  //   '7xl': '12.8rem',
-  // },
-  space: {
-    0: 0,
-    0.5: 2,
-    1: 4,
-    1.5: 6,
-    2: 8,
-    2.5: 10,
-    3: 12,
-    3.5: 14,
-    4: 16,
-    5: 20,
-    6: 24,
-    7: 28,
-    8: 32,
-    9: 36,
-    10: 40,
-    12: 48,
-    16: 64,
-    20: 80,
-    24: 96,
-    32: 128,
-    40: 160,
-    48: 192,
-    56: 224,
-    64: 256,
-    72: 288,
-    80: 320,
-    96: 384,
+  components: {
+    Accordion: {
+      // Can simply pass default props to change default behaviour of components.
+      baseStyle: {
+        rounded: 0,
+        padding: 0,
+        borderWidth: 0,
+      },
+    },
+    // TODO: sort out shadow/margins
+    AccordionSummary: {
+      baseStyle: {
+        bg: '#EFEBE9',
+        // shadow:4,
+        borderBottomThickness: 0,
+        // marginBottom:"8px"
+        borderTopColor: 'red.500',
+        // _hover: {
+        //   bg: mode('primary.200', 'primary.300')(props),
+        // },
+        color: '#553333',
+        _expanded: {
+          bg: '#EFEBE9',
+          // borderBottomColor: mode('gray.300', 'gray.600')(props),
+          _text: { color: '#553333' },
+        },
+        // _disabled: {
+        //   bg: mode('gray.200', 'gray.700')(props),
+        // },
+      },
+    },
   },
 }
 

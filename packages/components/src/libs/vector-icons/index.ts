@@ -2,21 +2,21 @@ import { IColors } from 'native-base/lib/typescript/theme/base/colors'
 
 import { AntDesignIconProps } from './icons/antdesign/AntDesign'
 import { EntypoIconProps } from './icons/entypo/Entypo'
-import { EvilIconsIconProps } from './icons/evilicons/EvilIcons'
+import { EvilIconsIconProps } from './icons/evilicons/Evilicons'
 import { FeatherIconProps } from './icons/feather/Feather'
 import { FontAwesomeIconProps } from './icons/fontawesome/FontAwesome'
 import { FontistoIconProps } from './icons/fontisto/Fontisto'
 import { FoundationIconProps } from './icons/foundation/Foundation'
 import { IoniconsIconProps } from './icons/ionicons/Ionicons'
-import { MaterialCommunityIconProps } from './icons/materialcommunityicons/MaterialCommunityIcons'
-import { MaterialIconProps } from './icons/materialicons/MaterialIcons'
+import { MaterialCommunityIconsIconProps } from './icons/materialcommunityicons/MaterialCommunityIcons'
+import { MaterialIconsIconProps } from './icons/materialicons/MaterialIcons'
 import { OcticonIconProps } from './icons/octicons/Octicons'
 import { SimpleLineIconsIconProps } from './icons/simplelineicons/SimpleLineIcons'
 import { ZocialIconProps } from './icons/zocial/Zocial'
 
 export * from './icons/antdesign/AntDesign'
 export * from './icons/entypo/Entypo'
-export * from './icons/evilicons/EvilIcons'
+export * from './icons/evilicons/Evilicons'
 export * from './icons/feather/Feather'
 export * from './icons/fontawesome/FontAwesome'
 export * from './icons/fontisto/Fontisto'
@@ -65,11 +65,11 @@ export type IconProp = {
     }
   | {
       family: 'material'
-      name: MaterialIconProps['name']
+      name: MaterialIconsIconProps['name']
     }
   | {
       family: 'materialcommunity'
-      name: MaterialCommunityIconProps['name']
+      name: MaterialCommunityIconsIconProps['name']
     }
   | {
       family: 'octicon'

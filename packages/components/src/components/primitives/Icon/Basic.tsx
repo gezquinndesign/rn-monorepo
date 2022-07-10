@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckIcon, HStack, Text } from 'native-base';
 
-export const Example = () => {
+export const Basic = () => {
   return (
     <HStack space={2}>
       <CheckIcon size="5" mt="0.5" color="emerald.500" />

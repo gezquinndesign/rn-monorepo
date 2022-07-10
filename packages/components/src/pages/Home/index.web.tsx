@@ -1,13 +1,16 @@
 import React from 'react'
-import { Box, Heading, Center } from 'native-base'
+import { Box, Heading, Center, Text } from 'native-base'
 
 const Home = () => {
   return (
     <Center h={'100vh'}>
       <Box>
-        <Heading size="4xl" color="white" textAlign="center">
-          Coming soon!
-        </Heading>
+        <Text fontSize="6xl" color="white" textAlign="center" fontFamily="heading">
+          Coming soon...
+        </Text>
+        <Text color="white" textAlign="center" fontFamily="body">
+          Explore Ngarinyin!
+        </Text>
       </Box>
     </Center>
   )

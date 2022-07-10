@@ -1,174 +1,90 @@
-import React from 'react';
+import React from 'react'
 import {
-  Box,
-  Text,
-  MoonIcon,
-  SunIcon,
-  CheckIcon,
-  CircleIcon,
-  ArrowBackIcon,
-  AddIcon,
-  ArrowForwardIcon,
-  ArrowUpIcon,
-  ArrowDownIcon,
-  CheckCircleIcon,
-  ChevronDownIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronUpIcon,
-  CloseIcon,
-  SmallCloseIcon,
-  HamburgerIcon,
-  InfoIcon,
-  InfoOutlineIcon,
-  MinusIcon,
-  QuestionIcon,
-  QuestionOutlineIcon,
-  SearchIcon,
-  WarningIcon,
-  WarningTwoIcon,
-  ThreeDotsIcon,
-  WarningOutlineIcon,
-  ShareIcon,
-  PlayIcon,
-  FavouriteIcon,
-  DeleteIcon,
-  VStack,
-  FlatList,
-  useBreakpointValue,
-} from 'native-base';
-export const Example = () => {
+  AboutOutline,
+  AboutSolid,
+  CaretDown,
+  CaretUp,
+  CaretLeft,
+  CaretRightFill,
+  FieldGuideOutline,
+  FieldGuideSolid,
+  MagnifyingGlass,
+  PhrasebookOutline,
+  PhrasebookSolid,
+  ReferenceOutline,
+  ReferenceSolid,
+  SpeakerFill,
+  Speaker,
+} from './Custom'
+import { VStack, FlatList, useBreakpointValue, Box, Text } from 'native-base'
+export const AllIcons = () => {
   const cols = useBreakpointValue({
     base: 3,
     sm: 4,
     md: 8,
-  });
+  })
   const icons = [
     {
-      icon: <AddIcon />,
-      iconName: 'add',
+      icon: <AboutOutline />,
+      iconName: 'about-outline',
     },
     {
-      icon: <ArrowBackIcon />,
-      iconName: 'arrow-back',
+      icon: <AboutSolid />,
+      iconName: 'about-solid',
     },
     {
-      icon: <ArrowForwardIcon />,
-      iconName: 'arrow-forward',
+      icon: <CaretDown />,
+      iconName: 'caret-down',
     },
     {
-      icon: <ArrowUpIcon />,
-      iconName: 'arrow-up',
+      icon: <CaretUp />,
+      iconName: 'caret-up',
     },
     {
-      icon: <ArrowDownIcon />,
-      iconName: 'arrow-down',
+      icon: <CaretLeft />,
+      iconName: 'caret-left',
     },
     {
-      icon: <CheckIcon />,
-      iconName: 'check',
+      icon: <CaretRightFill />,
+      iconName: 'caret-right-fill',
     },
     {
-      icon: <CheckCircleIcon />,
-      iconName: 'check-circle',
+      icon: <FieldGuideOutline />,
+      iconName: 'field-guide-outline',
     },
     {
-      icon: <ChevronDownIcon />,
-      iconName: 'chevron-down',
+      icon: <FieldGuideSolid />,
+      iconName: 'field-guide-solid',
     },
     {
-      icon: <ChevronLeftIcon />,
-      iconName: 'chevron-left',
+      icon: <MagnifyingGlass />,
+      iconName: 'magnifying-glass',
     },
     {
-      icon: <ChevronRightIcon />,
-      iconName: 'chevron-right',
+      icon: <PhrasebookOutline />,
+      iconName: 'phrasebook-outline',
     },
     {
-      icon: <ChevronUpIcon />,
-      iconName: 'chevron-up',
+      icon: <PhrasebookSolid />,
+      iconName: 'phrasebook-solid',
     },
     {
-      icon: <CircleIcon />,
-      iconName: 'circle',
+      icon: <ReferenceOutline />,
+      iconName: 'reference-outline',
     },
     {
-      icon: <CloseIcon />,
-      iconName: 'close',
+      icon: <ReferenceSolid />,
+      iconName: 'reference-solid',
     },
     {
-      icon: <SmallCloseIcon />,
-      iconName: 'small-close',
+      icon: <SpeakerFill />,
+      iconName: 'speaker-fill',
     },
     {
-      icon: <HamburgerIcon />,
-      iconName: 'menu',
+      icon: <Speaker />,
+      iconName: 'speaker',
     },
-    {
-      icon: <InfoIcon />,
-      iconName: 'info',
-    },
-    {
-      icon: <InfoOutlineIcon />,
-      iconName: 'info-outline',
-    },
-    {
-      icon: <MinusIcon />,
-      iconName: 'minus',
-    },
-    {
-      icon: <MoonIcon />,
-      iconName: 'moon',
-    },
-    {
-      icon: <QuestionIcon />,
-      iconName: 'question',
-    },
-    {
-      icon: <QuestionOutlineIcon />,
-      iconName: 'question-outline',
-    },
-    {
-      icon: <SearchIcon />,
-      iconName: 'search',
-    },
-    {
-      icon: <SunIcon />,
-      iconName: 'sun',
-    },
-    {
-      icon: <WarningIcon />,
-      iconName: 'warning-1',
-    },
-    {
-      icon: <WarningTwoIcon />,
-      iconName: 'warning-2',
-    },
-    {
-      icon: <WarningOutlineIcon />,
-      iconName: 'warning-outline',
-    },
-    {
-      icon: <ThreeDotsIcon />,
-      iconName: 'three-dots',
-    },
-    {
-      icon: <ShareIcon />,
-      iconName: 'share',
-    },
-    {
-      icon: <PlayIcon />,
-      iconName: 'play',
-    },
-    {
-      icon: <FavouriteIcon />,
-      iconName: 'favourite',
-    },
-    {
-      icon: <DeleteIcon />,
-      iconName: 'delete',
-    },
-  ];
+  ]
   return (
     <Box w="100%">
       <FlatList
@@ -191,5 +107,5 @@ export const Example = () => {
         numColumns={cols}
       />
     </Box>
-  );
-};
+  )
+}

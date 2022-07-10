@@ -1,67 +1,137 @@
-import React, {useContext, useState} from 'react';
-import {Platform} from 'react-native';
-import {NavigationContext} from 'navigation-react';
-import {TabBar, TabBarItem, useNavigated} from 'navigation-react-native';
-import Home from './FieldGuide';
-import Notifications from './Phrasebook';
-import {getHome, getFollows} from './data';
-import Phrasebook from './Phrasebook';
-import Reference from './Reference';
-import About from './About';
+import React, { useContext, useState } from 'react'
+import { Platform } from 'react-native'
+import { NavigationContext } from 'navigation-react'
+import { TabBar, TabBarItem, useNavigated } from 'navigation-react-native'
+
+import FieldGuide from './FieldGuide'
+import Phrasebook from './Phrasebook'
+import Reference from './Reference'
+import About from './About'
+
+import DATA from '../data/ngarinyin.ts'
 
 export default () => {
-  const {stateNavigator, data} = useContext(NavigationContext);
-  const tabs = {home: 0, notifications: 1};
-  const [tab, setTab] = useState(tabs[data.tab]);
-  const getHref = link => stateNavigator.historyManager.getHref(link);
+  const { stateNavigator, data } = useContext(NavigationContext)
+  const tabs = { fieldguide: 0, phrasebook: 1, reference: 2, about: 3 }
+  const keys = { 0: 'fieldguide', 1: 'phrasebook', 2: 'reference', 3: 'about' }
+  const titles = {
+    fieldguide: 'Field Guide',
+    phrasebook: 'Phrasebook',
+    reference: 'Reference',
+    about: 'About',
+  }
+  const [tab, setTab] = useState(tabs[data.tab])
+    console.log('TABS_DATA', data, tab)
+
+  const getHref = (link) => stateNavigator.historyManager.getHref(link)
   useNavigated(() => {
     if (Platform.OS === 'web') {
-      document.title = !tabs[data.tab] ? 'Home' : 'Notifications';
+      document.title = titles[data.tab]
       setTab(tabs[data.tab])
     }
-  });
+  })
+
+  // const fieldguide =
+  //     tab === 0
+  //       ? require('../assets/icons/bird-fill.png')
+  //       : require('../assets/icons/bird.png'),
+  //   phrasebook =
+  //     tab === 1
+  //       ? require('../assets/icons/chat-circle-text-fill.png')
+  //       : require('../assets/icons/chat-circle-text.png'),
+  //   reference =
+  //     tab === 2
+  //       ? require('../assets/icons/book-open-fill.png')
+  //       : require('../assets/icons/book-open.png'),
+  //   about =
+  //     tab === 3
+  //       ? require('../assets/icons/question-fill.png')
+  //       : require('../assets/icons/question.png')
+
   return (
     <TabBar
       tab={tab}
       primary={true}
       bottomTabs={true}
       barTintColor="#fff"
-      selectedTintColor="deepskyblue"
+      labelVisibilityMode="labeled"
+      unselectedTintColor="#734F3B"
+      selectedTintColor="#734F3B"
       onChangeTab={(selectedTab) => {
         if (Platform.OS === 'web') {
-          if (selectedTab === 1)
-            stateNavigator.refresh({tab: 'notifications'});
-          else
+          stateNavigator.refresh({ tab: keys[selectedTab] })
           // eslint-disable-next-line no-restricted-globals
-            history.back();
+          history.back()
         } else {
-          setTab(selectedTab);
+          // stateNavigator.refresh({ tab: keys[selectedTab] })
+          setTab(selectedTab)
         }
-      }}>
+      }}
+    >
       <TabBarItem
+        fontFamily="NunitoSans-Regular"
+        fontWeight={"400"}
         title="Field Guide"
-        image={require('./icon-bird.png')}
-        href={getHref(stateNavigator.getRefreshLink({tab: 'home'}))}>
-        <Home tweets={getHome()} />
+        image={
+          tab === 0
+            ? require('../assets/icons/bird-fill.png')
+            : require('../assets/icons/bird.png')
+        }
+        href={getHref(stateNavigator.getRefreshLink({ tab: 'fieldguide' }))}
+        onPress={() => {
+          stateNavigator.navigate('fieldguide', { tab: 'fieldguide' })
+        }}
+      >
+        <FieldGuide items={DATA.fieldguide.collections} tab={tab}/>
       </TabBarItem>
       <TabBarItem
+        fontFamily="NunitoSans-Regular"
+        fontWeight={"400"}
         title="Phrasebook"
-        image={require('./icon-phrase.png')}
-        href={getHref(stateNavigator.getRefreshLink({tab: 'notifications'}))}>
-        <Phrasebook follows={getFollows()} />
+        image={
+          tab === 1
+            ? require('../assets/icons/chat-circle-text-fill.png')
+            : require('../assets/icons/chat-circle-text.png')
+        }
+        href={getHref(stateNavigator.getRefreshLink({ tab: 'phrasebook' }))}
+        onPress={() => {
+          stateNavigator.navigate('phrasebook', { tab: 'phrasebook' })
+        }}
+      >
+        <Phrasebook items={DATA.phrasebook.collections}  tab={tab}/>
       </TabBarItem>
       <TabBarItem
+        fontFamily="NunitoSans-Regular"
+        fontWeight={"400"}
         title="Reference"
-        image={require('./icon-reference.png')}
-        href={getHref(stateNavigator.getRefreshLink({tab: 'notifications'}))}>
-        <Reference follows={getFollows()} />
+        image={
+          tab === 2
+            ? require('../assets/icons/book-open-fill.png')
+            : require('../assets/icons/book-open.png')
+        }
+        href={getHref(stateNavigator.getRefreshLink({ tab: 'reference' }))}
+        onPress={() => {
+          stateNavigator.navigate('fieldguide', { tab: 'reference' })
+        }}
+      >
+        <Reference items={DATA.reference.collections}  tab={tab}/>
       </TabBarItem>
       <TabBarItem
+        fontFamily="NunitoSans-Regular"
+        fontWeight={"400"}
         title="About"
-        image={require('./icon-about.png')}
-        href={getHref(stateNavigator.getRefreshLink({tab: 'notifications'}))}>
-        <About follows={getFollows()} />
+        image={
+          tab === 3
+            ? require('../assets/icons/question-fill.png')
+            : require('../assets/icons/question.png')
+        }
+        href={getHref(stateNavigator.getRefreshLink({ tab: 'about' }))}
+        onPress={() => {
+          stateNavigator.navigate('fieldguide', { tab: 'about' })
+        }}
+      >
+        <About items={DATA.about.collections}  tab={tab}/>
       </TabBarItem>
     </TabBar>
-  );
+  )
 }

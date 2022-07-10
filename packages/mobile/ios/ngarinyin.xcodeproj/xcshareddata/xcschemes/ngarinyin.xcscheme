@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ngarinyin.app"
-               BlueprintName = "ngarinyin"
-               ReferencedContainer = "container:ngarinyin.xcodeproj">
+               BuildableName = "Ngarinyin.app"
+               BlueprintName = "Ngarinyin"
+               ReferencedContainer = "container:Ngarinyin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ngarinyinTests.xctest"
-               BlueprintName = "ngarinyinTests"
-               ReferencedContainer = "container:ngarinyin.xcodeproj">
+               BuildableName = "NgarinyinTests.xctest"
+               BlueprintName = "NgarinyinTests"
+               ReferencedContainer = "container:Ngarinyin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ngarinyin.app"
-            BlueprintName = "ngarinyin"
-            ReferencedContainer = "container:ngarinyin.xcodeproj">
+            BuildableName = "Ngarinyin.app"
+            BlueprintName = "Ngarinyin"
+            ReferencedContainer = "container:Ngarinyin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ngarinyin.app"
-            BlueprintName = "ngarinyin"
-            ReferencedContainer = "container:ngarinyin.xcodeproj">
+            BuildableName = "Ngarinyin.app"
+            BlueprintName = "Ngarinyin"
+            ReferencedContainer = "container:Ngarinyin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

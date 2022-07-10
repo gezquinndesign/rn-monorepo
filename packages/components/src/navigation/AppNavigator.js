@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Platform, View, Image } from 'react-native'
 import { StateNavigator } from 'navigation'
 import { NavigationHandler } from 'navigation-react'
@@ -9,115 +9,117 @@ import {
   TabBarItem,
 } from 'navigation-react-native'
 import createStateNavigator from './createStateNavigator'
-import Home from './FieldGuide'
-import Notifications from './Phrasebook'
+
 import Tabs from './Tabs'
-import Tweet from './Tweet'
-import Timeline from './Timeline'
-import { getFollows } from './data'
+import FieldGuide from './FieldGuide'
+import Item from './Item'
+import Phrasebook from './Phrasebook'
+import Reference from './Reference'
+import About from './About'
 
-var stateNavigator = createStateNavigator()
+import DATA from '../data/ngarinyin.ts'
 
-const notificationsNavigator = new StateNavigator(stateNavigator)
-notificationsNavigator.historyManager.disabled = true
-notificationsNavigator.historyManager.stop()
+var fieldguideNavigator = createStateNavigator()
 
-const bird = require('./icon-bird.png')
-const phrase = require('./icon-phrase.png')
-const reference = require('./icon-reference.png')
-const about = require('./icon-about.png')
+const phrasebookNavigator = new StateNavigator(fieldguideNavigator)
+phrasebookNavigator.historyManager.disabled = true
+phrasebookNavigator.historyManager.stop()
+
+const referenceNavigator = new StateNavigator(fieldguideNavigator)
+referenceNavigator.historyManager.disabled = true
+referenceNavigator.historyManager.stop()
+
+const aboutNavigator = new StateNavigator(fieldguideNavigator)
+aboutNavigator.historyManager.disabled = true
+aboutNavigator.historyManager.stop()
 
 const App = () => {
-  const [notified, setNotified] = useState(false)
   return Platform.OS === 'ios' ? (
-    <TabBar barTintColor="#fff">
+    <TabBar
+      barTintColor="#fff"
+      unselectedTintColor="#734F3B"
+      selectedTintColor="#734F3B"
+    >
       <TabBarItem
+        fontFamily="NunitoSans-Regular"
+        fontWeight={'400'}
         title="Field Guide"
-        image={{ uri: Image.resolveAssetSource(bird).uri, height: 25 }}
+        image={{
+          uri: Image.resolveAssetSource(require('../assets/icons/bird.png'))
+            .uri,
+          height: 25,
+        }}
       >
-        <NavigationHandler stateNavigator={stateNavigator}>
+        <NavigationHandler stateNavigator={fieldguideNavigator}>
           <NavigationStack>
-            <Scene stateKey="home">
-              <Home />
-            </Scene>
-            <Scene stateKey="tweet">
-              <Tweet />
+            <Scene stateKey="fieldguide">
+              <FieldGuide items={DATA.fieldguide.collections} />
             </Scene>
             <Scene stateKey="timeline">
-              <Timeline />
+              <Item />
             </Scene>
           </NavigationStack>
         </NavigationHandler>
       </TabBarItem>
       <TabBarItem
+        fontFamily="NunitoSans-Regular"
+        fontWeight={'400'}
         title="Phrasebook"
-        image={{ uri: Image.resolveAssetSource(phrase).uri, height: 25 }}
-        // badge={!notified ? '' + getFollows().length : null}
-        onPress={() => {
-          setNotified(true)
+        image={{
+          uri: Image.resolveAssetSource(
+            require('../assets/icons/chat-circle-text.png'),
+          ).uri,
+          height: 25,
         }}
       >
-        <NavigationHandler stateNavigator={notificationsNavigator}>
+        <NavigationHandler stateNavigator={phrasebookNavigator}>
           <NavigationStack>
-            <Scene stateKey="notifications">
-              <Notifications />
-            </Scene>
-            <Scene stateKey="tweet">
-              <Tweet />
-            </Scene>
-            <Scene stateKey="timeline">
-              <Timeline />
+            <Scene stateKey="fieldguide">
+              <Phrasebook items={DATA.phrasebook.collections} />
             </Scene>
           </NavigationStack>
         </NavigationHandler>
       </TabBarItem>
       <TabBarItem
+        fontFamily="NunitoSans-Regular"
+        fontWeight={'400'}
         title="Reference"
-        image={{ uri: Image.resolveAssetSource(reference).uri, height: 25 }}
-        // badge={!notified ? '' + getFollows().length : null}
-        onPress={() => {
-          setNotified(true)
+        image={{
+          uri: Image.resolveAssetSource(
+            require('../assets/icons/book-open.png'),
+          ).uri,
+          height: 25,
         }}
       >
-        <NavigationHandler stateNavigator={notificationsNavigator}>
+        <NavigationHandler stateNavigator={referenceNavigator}>
           <NavigationStack>
-            <Scene stateKey="notifications">
-              <Notifications />
-            </Scene>
-            <Scene stateKey="tweet">
-              <Tweet />
-            </Scene>
-            <Scene stateKey="timeline">
-              <Timeline />
+            <Scene stateKey="fieldguide">
+              <Reference items={DATA.reference.collections} />
             </Scene>
           </NavigationStack>
         </NavigationHandler>
       </TabBarItem>
       <TabBarItem
+        fontFamily="NunitoSans-Regular"
+        fontWeight={'400'}
         title="About"
-        image={{ uri: Image.resolveAssetSource(about).uri, height: 25 }}
-        // badge={!notified ? '' + getFollows().length : null}
-        onPress={() => {
-          setNotified(true)
+        image={{
+          uri: Image.resolveAssetSource(require('../assets/icons/question.png'))
+            .uri,
+          height: 25,
         }}
       >
-        <NavigationHandler stateNavigator={notificationsNavigator}>
+        <NavigationHandler stateNavigator={aboutNavigator}>
           <NavigationStack>
-            <Scene stateKey="notifications">
-              <Notifications />
-            </Scene>
-            <Scene stateKey="tweet">
-              <Tweet />
-            </Scene>
-            <Scene stateKey="timeline">
-              <Timeline />
+            <Scene stateKey="fieldguide">
+              <About items={DATA.about.collections} />
             </Scene>
           </NavigationStack>
         </NavigationHandler>
       </TabBarItem>
     </TabBar>
   ) : (
-    <NavigationHandler stateNavigator={stateNavigator}>
+    <NavigationHandler stateNavigator={fieldguideNavigator}>
       <NavigationStack
         crumbStyle={(from) => (from ? 'scale_in' : 'scale_out')}
         unmountStyle={(from) => (from ? 'slide_in' : 'slide_out')}
@@ -143,23 +145,11 @@ const App = () => {
           </View>
         )}
       >
-        <Scene stateKey="home">
+        <Scene stateKey="fieldguide">
           <Tabs />
         </Scene>
-        <Scene stateKey="notifications">
-          <Notifications />
-        </Scene>
-        <Scene stateKey="reference">
-          <Notifications />
-        </Scene>
-        <Scene stateKey="about">
-          <Notifications />
-        </Scene>
-        <Scene stateKey="tweet">
-          <Tweet />
-        </Scene>
         <Scene stateKey="timeline">
-          <Timeline />
+          <Item />
         </Scene>
       </NavigationStack>
     </NavigationHandler>
